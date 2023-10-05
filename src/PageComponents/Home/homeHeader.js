@@ -11,22 +11,22 @@ const homeHeader = (props) => {
         height: '90vh',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'left',
+        alignItems: 'center',
         justifyContent: 'center',
         backgroundImage: `url(${homeimage})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'none',
+        backgroundPosition: 'bottom',
+
     }}>
-        <Typography variant='h1' color='primary.main'>Betsy's Salon</Typography>
-        <Typography variant='h3' color='primary.main' sx={{marginBottom: '10px'}}>of Tampa Bay</Typography>
-        <MyStyledButton />
+        <Typography variant='h1' color='primary.main' >Betsy's Salon</Typography>
+        <Typography variant='h3' color='primary.main'>of Tampa Bay</Typography>
+       
         <Box sx={{
           width: '500px',
           height: '200px',
           position: 'relative',
           bottom: '-40%',
-          left: '50%',
-          transform: 'translateX(-50%)',
           borderRadius: '15px',
           border: '5px solid black',
           backgroundColor: 'white',

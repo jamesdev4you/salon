@@ -8,6 +8,7 @@ const MyStyledButton = (props) => (
       width: '200px',
       height: '30px',
       color: `black`,
+      marginLeft: '140px',
       background: 'linear-gradient(#EDE9E5, #FFFFFF)',
       '&:hover':{
         color: 'black',
