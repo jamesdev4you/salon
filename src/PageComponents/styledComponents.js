@@ -2,22 +2,22 @@ import Button from '@mui/material/Button';
 
 const MyStyledButton = (props) => (
   <Button
-  variant="contained"
+    variant='contained'
     sx={{
       padding: 1,
       width: '200px',
       height: '30px',
-      color: `black`,
-      marginLeft: '140px',
-      background: 'linear-gradient(#EDE9E5, #FFFFFF)',
-      '&:hover':{
+      background: `linear-gradient(#d8a272, #F7C145)`,
+      color: 'black',
+      '&:hover': {
         color: 'black',
         backgroundColor: 'white',
-      }
+      },
+      border: '2px solid black',
     }}
   >
     Book Today!
   </Button>
 );
 
-export {MyStyledButton};
+export { MyStyledButton };

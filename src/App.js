@@ -1,10 +1,10 @@
-import Home from './PageComponents/Home/homeHeader.js';
+import Home from './PageComponents/Home/home.js';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
     palette: {
       primary: {
-        main: '#F7F5F3',
+        main: '#000000',
       },
     },
   });

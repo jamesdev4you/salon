@@ -1,10 +1,12 @@
 import React from 'react';
-import homeHeader from './homeHeader';
+import HomeHeader from '../Home/homeHeader.js';
+import HomeServices from '../Home/homeServices.js';
 
-const home = (props) => {
+const home = () => {
   return (
     <>
-        <homeHeader />
+        <HomeHeader />
+        <HomeServices />
     </>
   )
 }
