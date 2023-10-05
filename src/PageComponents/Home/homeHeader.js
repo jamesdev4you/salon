@@ -55,7 +55,7 @@ const homeHeader = (props) => {
           width: '500px',
           height: '200px',
           position: 'relative',
-          bottom: '-33%',
+          bottom: '-10%',
           background:
             'linear-gradient(to bottom right, rgba(225,225,225, 1), rgba(255,215,0,.7)) padding-box, linear-gradient(to right, rgb(255,237,195), rgb(255,237,195)) border-box',
           borderRadius: '15px',
