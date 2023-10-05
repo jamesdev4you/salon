@@ -14,17 +14,18 @@ const homeMenu = () => {
         backgroundSize: 'cover',
         backgroundRepeat: 'none',
         backgroundPosition: 'center',
-        background: 'linear-gradient(to bottom, #F6D584, #FFDF8E)',
+        background: '#1B1E1E',
+        paddingTop: '100px',
       }}
     >
       <Typography
         variant='h1'
-        color='primary.main'
         sx={{
           textAlign: 'center',
           marginBottom: '15px',
           fontFamily: 'Birds',
           textDecoration: 'underline',
+          color: '#5B5C50',
         }}
       >
         Our Menu!
@@ -51,72 +52,72 @@ const homeMenu = () => {
         >
           <Typography
             variant='h1'
-            color='primary.main'
             sx={{
               textAlign: 'center',
               marginBottom: '15px',
               fontFamily: 'Birds',
               textDecoration: 'underline',
+              color: '#E4DCC0',
             }}
           >
             Hair
           </Typography>
           <Typography
             variant='h3'
-            color='primary.main'
             sx={{
               textAlign: 'center',
               marginBottom: '15px',
+              color: '#E4DCC0',
             }}
           >
             Hair........... $35
           </Typography>
           <Typography
             variant='h3'
-            color='primary.main'
             sx={{
               textAlign: 'center',
               marginBottom: '15px',
+              color: '#E4DCC0',
             }}
           >
             Hair........... $35
           </Typography>
           <Typography
             variant='h3'
-            color='primary.main'
             sx={{
               textAlign: 'center',
               marginBottom: '15px',
+              color: '#E4DCC0',
             }}
           >
             Hair........... $35
           </Typography>
           <Typography
             variant='h3'
-            color='primary.main'
             sx={{
               textAlign: 'center',
               marginBottom: '15px',
+              color: '#E4DCC0',
             }}
           >
             Hair........... $35
           </Typography>
           <Typography
             variant='h3'
-            color='primary.main'
             sx={{
               textAlign: 'center',
               marginBottom: '15px',
+              color: '#E4DCC0',
             }}
           >
             Hair........... $35
           </Typography>
           <Typography
             variant='h3'
-            color='primary.main'
             sx={{
               textAlign: 'center',
               marginBottom: '15px',
+              color: '#E4DCC0',
             }}
           >
             Hair........... $35
@@ -135,72 +136,72 @@ const homeMenu = () => {
         >
           <Typography
             variant='h1'
-            color='primary.main'
             sx={{
               textAlign: 'center',
               marginBottom: '15px',
               fontFamily: 'Birds',
               textDecoration: 'underline',
+              color: '#E4DCC0',
             }}
           >
             Hair
           </Typography>
           <Typography
             variant='h3'
-            color='primary.main'
             sx={{
               textAlign: 'center',
               marginBottom: '15px',
+              color: '#E4DCC0',
             }}
           >
             Hair........... $35
           </Typography>
           <Typography
             variant='h3'
-            color='primary.main'
             sx={{
               textAlign: 'center',
               marginBottom: '15px',
+              color: '#E4DCC0',
             }}
           >
             Hair........... $35
           </Typography>
           <Typography
             variant='h3'
-            color='primary.main'
             sx={{
               textAlign: 'center',
               marginBottom: '15px',
+              color: '#E4DCC0',
             }}
           >
             Hair........... $35
           </Typography>
           <Typography
             variant='h3'
-            color='primary.main'
             sx={{
               textAlign: 'center',
               marginBottom: '15px',
+              color: '#E4DCC0',
             }}
           >
             Hair........... $35
           </Typography>
           <Typography
             variant='h3'
-            color='primary.main'
             sx={{
               textAlign: 'center',
               marginBottom: '15px',
+              color: '#E4DCC0',
             }}
           >
             Hair........... $35
           </Typography>
           <Typography
             variant='h3'
-            color='primary.main'
             sx={{
               textAlign: 'center',
               marginBottom: '15px',
+              color: '#E4DCC0',
             }}
           >
             Hair........... $35
@@ -219,72 +220,72 @@ const homeMenu = () => {
         >
           <Typography
             variant='h1'
-            color='primary.main'
             sx={{
               textAlign: 'center',
               marginBottom: '15px',
               fontFamily: 'Birds',
               textDecoration: 'underline',
+              color: '#E4DCC0',
             }}
           >
             Hair
           </Typography>
           <Typography
             variant='h3'
-            color='primary.main'
             sx={{
               textAlign: 'center',
               marginBottom: '15px',
+              color: '#E4DCC0',
             }}
           >
             Hair........... $35
           </Typography>
           <Typography
             variant='h3'
-            color='primary.main'
             sx={{
               textAlign: 'center',
               marginBottom: '15px',
+              color: '#E4DCC0',
             }}
           >
             Hair........... $35
           </Typography>
           <Typography
             variant='h3'
-            color='primary.main'
             sx={{
               textAlign: 'center',
               marginBottom: '15px',
+              color: '#E4DCC0',
             }}
           >
             Hair........... $35
           </Typography>
           <Typography
             variant='h3'
-            color='primary.main'
             sx={{
               textAlign: 'center',
               marginBottom: '15px',
+              color: '#E4DCC0',
             }}
           >
             Hair........... $35
           </Typography>
           <Typography
             variant='h3'
-            color='primary.main'
             sx={{
               textAlign: 'center',
               marginBottom: '15px',
+              color: '#E4DCC0',
             }}
           >
             Hair........... $35
           </Typography>
           <Typography
             variant='h3'
-            color='primary.main'
             sx={{
               textAlign: 'center',
               marginBottom: '15px',
+              color: '#E4DCC0',
             }}
           >
             Hair........... $35

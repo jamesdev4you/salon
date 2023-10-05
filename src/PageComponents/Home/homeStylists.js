@@ -14,13 +14,12 @@ const homeStylists = () => {
         backgroundSize: 'cover',
         backgroundRepeat: 'none',
         backgroundPosition: 'center',
-        background: 'linear-gradient(to bottom, #ECCB7A, #F6D584)',
+        background: '#C2AD90',
         paddingTop: '150px',
       }}
     >
       <Typography
         variant='h1'
-        color='primary.main'
         sx={{
           textAlign: 'center',
           marginBottom: '15px',
@@ -44,7 +43,7 @@ const homeStylists = () => {
           sx={{
             width: '15%',
             height: '500px',
-            backgroundColor: 'white',
+            backgroundColor: '#E4DCC0',
             borderRadius: '20px',
             boxShadow:
               'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
@@ -54,7 +53,7 @@ const homeStylists = () => {
           sx={{
             width: '15%',
             height: '500px',
-            backgroundColor: 'white',
+            backgroundColor: '#E4DCC0',
             borderRadius: '20px',
             boxShadow:
               'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
@@ -64,7 +63,7 @@ const homeStylists = () => {
           sx={{
             width: '15%',
             height: '500px',
-            backgroundColor: 'white',
+            backgroundColor: '#E4DCC0',
             borderRadius: '20px',
             boxShadow:
               'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
@@ -74,7 +73,7 @@ const homeStylists = () => {
           sx={{
             width: '15%',
             height: '500px',
-            backgroundColor: 'white',
+            backgroundColor: '#E4DCC0',
             borderRadius: '20px',
             boxShadow:
               'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
@@ -84,7 +83,7 @@ const homeStylists = () => {
           sx={{
             width: '15%',
             height: '500px',
-            backgroundColor: 'white',
+            backgroundColor: '#E4DCC0',
             borderRadius: '20px',
             boxShadow:
               'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
