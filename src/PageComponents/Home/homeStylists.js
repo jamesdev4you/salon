@@ -1,12 +1,12 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
-const homeServices = () => {
+const homeStylists = () => {
   return (
     <Box
       sx={{
         width: '100%',
-        height: '75vh',
+        height: '100vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -14,8 +14,8 @@ const homeServices = () => {
         backgroundSize: 'cover',
         backgroundRepeat: 'none',
         backgroundPosition: 'center',
-        background: 'linear-gradient(to bottom, #E2C170, #ECCB7A)',
-        paddingTop: '50px',
+        background: 'linear-gradient(to bottom, #ECCB7A, #F6D584)',
+        paddingTop: '150px',
       }}
     >
       <Typography
@@ -28,7 +28,7 @@ const homeServices = () => {
           textDecoration: 'underline',
         }}
       >
-        Our Services
+        Our Stylists!
       </Typography>
       <Box
         sx={{
@@ -36,14 +36,14 @@ const homeServices = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: '100px',
-          marginTop: '80px',
+          gap: '50px',
+          marginTop: '150px',
         }}
       >
         <Box
           sx={{
-            width: '25%',
-            height: '550px',
+            width: '15%',
+            height: '500px',
             backgroundColor: 'white',
             borderRadius: '20px',
             boxShadow:
@@ -52,8 +52,8 @@ const homeServices = () => {
         ></Box>
         <Box
           sx={{
-            width: '25%',
-            height: '550px',
+            width: '15%',
+            height: '500px',
             backgroundColor: 'white',
             borderRadius: '20px',
             boxShadow:
@@ -62,8 +62,28 @@ const homeServices = () => {
         ></Box>
         <Box
           sx={{
-            width: '25%',
-            height: '550px',
+            width: '15%',
+            height: '500px',
+            backgroundColor: 'white',
+            borderRadius: '20px',
+            boxShadow:
+              'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
+          }}
+        ></Box>
+        <Box
+          sx={{
+            width: '15%',
+            height: '500px',
+            backgroundColor: 'white',
+            borderRadius: '20px',
+            boxShadow:
+              'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
+          }}
+        ></Box>
+        <Box
+          sx={{
+            width: '15%',
+            height: '500px',
             backgroundColor: 'white',
             borderRadius: '20px',
             boxShadow:
@@ -75,4 +95,4 @@ const homeServices = () => {
   );
 };
 
-export default homeServices;
+export default homeStylists;

@@ -18,6 +18,7 @@ const homeHeader = (props) => {
         backgroundSize: 'cover',
         backgroundRepeat: 'none',
         backgroundPosition: 'center',
+        borderBottom: '2px solid black',
       }}
     >
       <Box
