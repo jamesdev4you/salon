@@ -7,13 +7,15 @@ const MyStyledButton = (props) => (
       padding: 1,
       width: '200px',
       height: '30px',
-      background: `linear-gradient(#d8a272, #F7C145)`,
-      color: 'black',
+      background: `linear-gradient(to bottom left, #5B5C50, #1B1E1E)`,
+      color: '#F5DE6D',
       '&:hover': {
-        color: 'black',
-        backgroundColor: 'white',
+        color: '#5B5C50',
+        background: '#F5DE6D',
+        border: '2px solid #5B5C50',
+        fontWeight: 'bold',
       },
-      border: '2px solid black',
+      border: '2px solid #F5DE6D',
     }}
   >
     Book Today!

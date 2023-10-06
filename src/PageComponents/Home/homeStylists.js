@@ -6,7 +6,7 @@ const homeStylists = () => {
     <Box
       sx={{
         width: '100%',
-        height: '100vh',
+        height: '73vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -36,7 +36,7 @@ const homeStylists = () => {
           alignItems: 'center',
           justifyContent: 'center',
           gap: '50px',
-          marginTop: '150px',
+          marginTop: '100px',
         }}
       >
         <Box

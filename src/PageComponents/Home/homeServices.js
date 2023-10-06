@@ -20,7 +20,7 @@ const homeServices = () => {
     >
       <Typography
         variant='h1'
-        color='primary.main'
+        color='secondary.main'
         sx={{
           textAlign: 'center',
           marginBottom: '15px',
