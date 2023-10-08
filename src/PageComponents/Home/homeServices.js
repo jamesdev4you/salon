@@ -1,5 +1,18 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
+import FacialLogo from '../assets/beauty-treatment.png';
+import ManicureLogo from '../assets/manicure.png';
+import StylistLogo from '../assets/woman-hair.png';
+
+const servicesList = [
+  { logo: FacialLogo, title: 'Facials', description: 'lorem ipsum' },
+  {
+    logo: ManicureLogo,
+    title: 'Manicures / Pedicures',
+    description: 'lorem ipsum',
+  },
+  { logo: StylistLogo, title: 'Hair Stylist', description: 'lorem ipsume' },
+];
 
 const homeServices = () => {
   return (
@@ -43,7 +56,7 @@ const homeServices = () => {
         <Box
           sx={{
             width: '25%',
-            height: '550px',
+            height: '60vh',
             backgroundColor: '#E4DCC0',
             borderRadius: '20px',
             boxShadow:
@@ -53,7 +66,7 @@ const homeServices = () => {
         <Box
           sx={{
             width: '25%',
-            height: '550px',
+            height: '60vh',
             backgroundColor: '#E4DCC0',
             borderRadius: '20px',
             boxShadow:
@@ -63,7 +76,7 @@ const homeServices = () => {
         <Box
           sx={{
             width: '25%',
-            height: '550px',
+            height: '60vh',
             backgroundColor: '#E4DCC0',
             borderRadius: '20px',
             boxShadow:
