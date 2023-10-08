@@ -44,7 +44,7 @@ const homeServices = () => {
     <Box
       sx={{
         width: '100%',
-        height: '75vh',
+        height: '85vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -83,7 +83,7 @@ const homeServices = () => {
             <Box
               sx={{
                 width: '23%',
-                height: '50vh',
+                height: '60vh',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
@@ -97,15 +97,15 @@ const homeServices = () => {
               }}
             >
               <Typography
-                variant='h2'
+                variant='h3'
                 sx={{ color: 'primary.main', fontFamily: 'Birds' }}
               >
                 <SvgIcon
                   component={logo}
                   viewBox={viewBox}
                   sx={{
-                    height: '50px',
-                    width: '50px',
+                    height: '40px',
+                    width: '40px',
                     color: 'primary.main',
                     marginRight: '15px',
                   }}
@@ -115,8 +115,8 @@ const homeServices = () => {
                   component={logoRight}
                   viewBox={viewBoxRight}
                   sx={{
-                    height: '50px',
-                    width: '50px',
+                    height: '40px',
+                    width: '40px',
                     color: '#000000',
                     marginLeft: '25px',
                   }}
@@ -128,15 +128,13 @@ const homeServices = () => {
               <Typography variant='p' sx={{ color: '#5B5C50' }}>
                 {description}
               </Typography>
-              <Typography variant='p' sx={{ color: '#5B5C50' }}>
+              <Typography
+                variant='p'
+                sx={{ color: '#5B5C50', marginBottom: 'auto' }}
+              >
                 {description}
               </Typography>
-              <Typography variant='p' sx={{ color: '#5B5C50' }}>
-                {description}
-              </Typography>
-              <Typography variant='p' sx={{ color: '#5B5C50' }}>
-                {description}
-              </Typography>
+
               <MyServiceButton />
             </Box>
           )

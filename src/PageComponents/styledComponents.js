@@ -39,7 +39,6 @@ const MyServiceButton = (props) => (
         fontWeight: 'bold',
       },
       border: '2px solid #E4DCC0',
-      marginTop: 'auto',
     }}
   >
     Schedule Today!

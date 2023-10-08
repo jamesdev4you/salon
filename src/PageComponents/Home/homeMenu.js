@@ -6,7 +6,7 @@ const homeMenu = () => {
     <Box
       sx={{
         width: '100%',
-        height: '88vh',
+        height: '95vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -26,7 +26,7 @@ const homeMenu = () => {
           fontFamily: 'Birds',
           textDecoration: 'underline',
         }}
-        color="secondary.main"
+        color='secondary.main'
       >
         Our Menu!
       </Typography>
@@ -46,7 +46,7 @@ const homeMenu = () => {
             alignItems: 'center',
             justifyContent: 'start',
             flexDirection: 'column',
-            fontAlign:'center',
+            fontAlign: 'center',
             width: '33%',
             height: '600px',
             paddingTop: '50px',
@@ -135,7 +135,7 @@ const homeMenu = () => {
             alignItems: 'center',
             justifyContent: 'start',
             flexDirection: 'column',
-            fontAlign:'center',
+            fontAlign: 'center',
             width: '33%',
             height: '600px',
             paddingTop: '50px',
@@ -224,7 +224,7 @@ const homeMenu = () => {
             alignItems: 'center',
             justifyContent: 'start',
             flexDirection: 'column',
-            fontAlign:'center',
+            fontAlign: 'center',
             width: '33%',
             height: '600px',
             paddingTop: '50px',

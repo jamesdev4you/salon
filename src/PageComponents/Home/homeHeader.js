@@ -1,7 +1,7 @@
 import React from 'react';
 import homeimage from '../assets/headerhome.jpg';
 import { Typography, Box } from '@mui/material';
-import { MyStyledButton } from '../styledComponents.js';
+import { MyServiceButton } from '../styledComponents.js';
 import '../../index.css';
 
 const homeHeader = (props) => {
@@ -29,10 +29,9 @@ const homeHeader = (props) => {
           justifyContent: 'center',
           width: '600px',
           height: '300px',
-          background:
-            'linear-gradient(to bottom right, rgba(205, 180, 80, .1), rgba(255,215,0,.7)) padding-box, linear-gradient(to right, rgb(255,237,195), rgb(255,237,195)) border-box',
+          background: '#E4DCC0',
           borderRadius: '15px',
-          border: '4px solid transparent',
+          border: '4px solid #1B1E1E',
         }}
       >
         <Typography
@@ -40,7 +39,7 @@ const homeHeader = (props) => {
           color='primary.main'
           sx={{ fontFamily: 'Birds' }}
         >
-          Betsy's Salon
+          Shear Bliss
         </Typography>
         <Typography
           variant='h3'
@@ -49,7 +48,7 @@ const homeHeader = (props) => {
         >
           of Tampa Bay
         </Typography>
-        <MyStyledButton />
+        <MyServiceButton />
       </Box>
     </Box>
   );
