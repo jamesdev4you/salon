@@ -4,7 +4,7 @@ const MyStyledButton = (props) => (
   <Button
     variant='contained'
     sx={{
-      padding: 1,
+      paddingBottom: '5px',
       width: '200px',
       height: '30px',
       background: `linear-gradient(to bottom left, #5B5C50, #1B1E1E)`,
@@ -26,7 +26,7 @@ const MyServiceButton = (props) => (
   <Button
     variant='contained'
     sx={{
-      padding: 1,
+      paddingBottom: '5px',
       width: '200px',
       height: '30px',
       background: `primary.main`,
