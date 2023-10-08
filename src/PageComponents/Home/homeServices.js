@@ -1,30 +1,41 @@
 import React from 'react';
 import { Box, Typography, SvgIcon } from '@mui/material';
 import { ReactComponent as FacialIcon } from '../assets/beauty-treatment.svg';
+import { ReactComponent as FacialIconRight } from '../assets/sheet-mask.svg';
 import { ReactComponent as ManicureIcon } from '../assets/manicure.svg';
-import { ReactComponent as StylistIcon } from '../assets/hair.svg';
+import { ReactComponent as ManicureIconRight } from '../assets/nail-polish.svg';
+import { ReactComponent as StylistIconRight } from '../assets/hair.svg';
+import { ReactComponent as StylistIcon } from '../assets/women.svg';
+
+import { MyServiceButton } from '../styledComponents.js';
 
 const servicesInformation = [
   {
     logo: FacialIcon,
+    logoRight: FacialIconRight,
     viewBox: '0 0 128 128',
+    viewBoxRight: '0 0 512 512',
     title: 'Facials',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla sem, posuere sodales molestie dictum, gravida id nisl. In hac habitasse platea dictumst. In rutrum est vel libero mattis vehicula. Phasellus facilisis orci enim, vel tristique nulla venenatis sed. Phasellus eleifend, magna quis pulvinar facilisis, nibh tellus commodo libero, vel varius diam libero et quam. Aenean facilisis scelerisque nunc, nec ullamcorper risus dignissim ut. Maecenas et urna ullamcorper, vestibulum lectus dignissim, scelerisque massa.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla sem, posuere sodales molestie dictum, gravida id nisl. In hac habitasse platea dictumst. In rutrum est vel libero mattis.',
   },
   {
     logo: ManicureIcon,
+    logoRight: ManicureIconRight,
     viewBox: '0 0 512 512',
+    viewBoxRight: '0 0 583.721 583.721',
     title: 'Mani-Pedi',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla sem, posuere sodales molestie dictum, gravida id nisl. In hac habitasse platea dictumst. In rutrum est vel libero mattis vehicula. Phasellus facilisis orci enim, vel tristique nulla venenatis sed. Phasellus eleifend, magna quis pulvinar facilisis, nibh tellus commodo libero, vel varius diam libero et quam. Aenean facilisis scelerisque nunc, nec ullamcorper risus dignissim ut. Maecenas et urna ullamcorper, vestibulum lectus dignissim, scelerisque massa.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla sem, posuere sodales molestie dictum, gravida id nisl. In hac habitasse platea dictumst. In rutrum est vel libero mattis.',
   },
   {
     logo: StylistIcon,
-    viewBox: '0 0 64 64',
+    logoRight: StylistIconRight,
+    viewBoxRight: '0 0 64 64',
+    viewBox: '0 0 512 512',
     title: 'Hair Stylist',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla sem, posuere sodales molestie dictum, gravida id nisl. In hac habitasse platea dictumst. In rutrum est vel libero mattis vehicula. Phasellus facilisis orci enim, vel tristique nulla venenatis sed. Phasellus eleifend, magna quis pulvinar facilisis, nibh tellus commodo libero, vel varius diam libero et quam. Aenean facilisis scelerisque nunc, nec ullamcorper risus dignissim ut. Maecenas et urna ullamcorper, vestibulum lectus dignissim, scelerisque massa.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla sem, posuere sodales molestie dictum, gravida id nisl. In hac habitasse platea dictumst. In rutrum est vel libero mattis.',
   },
 ];
 
@@ -67,32 +78,69 @@ const homeServices = () => {
           marginTop: '80px',
         }}
       >
-        {servicesInformation.map(({ logo, title, description, viewBox }) => (
-          <Box
-            sx={{
-              width: '25%',
-              height: '60vh',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'start',
-              padding: '2em',
-              gap: '1em',
-              backgroundColor: '#E4DCC0',
-              borderRadius: '20px',
-              boxShadow:
-                'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
-            }}
-          >
-            <SvgIcon
-              component={logo}
-              viewBox={viewBox}
-              sx={{ height: '100px', width: '100px' }}
-            />
-            <Typography variant='h3'>{title}</Typography>
-            <Typography variant='p'>{description}</Typography>
-          </Box>
-        ))}
+        {servicesInformation.map(
+          ({ logo, logoRight, viewBox, viewBoxRight, title, description }) => (
+            <Box
+              sx={{
+                width: '23%',
+                height: '50vh',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'start',
+                padding: '2em',
+                gap: '.5em',
+                backgroundColor: '#E4DCC0',
+                borderRadius: '20px',
+                boxShadow:
+                  'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
+              }}
+            >
+              <Typography
+                variant='h2'
+                sx={{ color: 'primary.main', fontFamily: 'Birds' }}
+              >
+                <SvgIcon
+                  component={logo}
+                  viewBox={viewBox}
+                  sx={{
+                    height: '50px',
+                    width: '50px',
+                    color: 'primary.main',
+                    marginRight: '15px',
+                  }}
+                />
+                {title}
+                <SvgIcon
+                  component={logoRight}
+                  viewBox={viewBoxRight}
+                  sx={{
+                    height: '50px',
+                    width: '50px',
+                    color: '#000000',
+                    marginLeft: '25px',
+                  }}
+                />
+              </Typography>
+              <Typography variant='p' sx={{ color: '#5B5C50' }}>
+                {description}
+              </Typography>
+              <Typography variant='p' sx={{ color: '#5B5C50' }}>
+                {description}
+              </Typography>
+              <Typography variant='p' sx={{ color: '#5B5C50' }}>
+                {description}
+              </Typography>
+              <Typography variant='p' sx={{ color: '#5B5C50' }}>
+                {description}
+              </Typography>
+              <Typography variant='p' sx={{ color: '#5B5C50' }}>
+                {description}
+              </Typography>
+              <MyServiceButton />
+            </Box>
+          )
+        )}
       </Box>
     </Box>
   );
