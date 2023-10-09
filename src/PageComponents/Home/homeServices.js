@@ -44,7 +44,7 @@ const homeServices = () => {
     <Box
       sx={{
         width: '100%',
-        height: '85vh',
+        height: '83vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -63,7 +63,6 @@ const homeServices = () => {
           textAlign: 'center',
           marginBottom: '15px',
           fontFamily: 'Birds',
-          textDecoration: 'underline',
         }}
       >
         Our Services

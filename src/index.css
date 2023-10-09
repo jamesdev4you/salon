@@ -16,3 +16,8 @@ code {
   font-family: 'Birds';
   src: local('Birds'), url(../src/Fonts/birds.ttf) format('truetype');
 }
+
+@font-face {
+  font-family: 'Mono';
+  src: local('Mono'), url(../src/Fonts/mono.otf) format('opentype');
+}

@@ -68,10 +68,9 @@ const HomeStylists = () => {
           textAlign: 'center',
           marginBottom: '15px',
           fontFamily: 'Birds',
-          textDecoration: 'underline',
         }}
       >
-        Our Stylists!
+        Our Stylists
       </Typography>
       <Box
         sx={{
