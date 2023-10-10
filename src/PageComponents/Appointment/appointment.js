@@ -17,7 +17,7 @@ const appointment = (props) => {
       <Box
         sx={{
           width: '100%',
-          height: '100vh',
+          height: '95vh',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
