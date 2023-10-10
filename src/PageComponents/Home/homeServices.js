@@ -6,7 +6,6 @@ import { ReactComponent as ManicureIcon } from '../assets/manicure.svg';
 import { ReactComponent as ManicureIconRight } from '../assets/nail-polish.svg';
 import { ReactComponent as StylistIconRight } from '../assets/hair.svg';
 import { ReactComponent as StylistIcon } from '../assets/women.svg';
-
 import { MyServiceButton } from '../styledComponents.js';
 
 const servicesInformation = [

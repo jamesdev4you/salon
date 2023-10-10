@@ -1,20 +1,18 @@
 import React from 'react';
-import homeimage from '../assets/headerhome.jpg';
 import { Typography, Box } from '@mui/material';
-import { MyServiceButton } from '../styledComponents.js';
 import '../../index.css';
 
-const homeHeader = (props) => {
+export default function homeHeader(props) {
   return (
     <Box
       sx={{
-        width: 'auto',
+        width: '100%',
         height: '100vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundImage: `url(${homeimage})`,
+        backgroundImage: `url(${props.headerOp.backgroundImg})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'none',
         backgroundPosition: 'center',
@@ -39,19 +37,17 @@ const homeHeader = (props) => {
           color='primary.main'
           sx={{ fontFamily: 'Birds' }}
         >
-          Shear Bliss
+          {props.headerOp.title}
         </Typography>
         <Typography
           variant='h3'
           color='primary.main'
           sx={{ marginBottom: '15px', fontFamily: 'Birds' }}
         >
-          of Tampa Bay
+          {props.headerOp.desc}
         </Typography>
-        <MyServiceButton />
+        <props.headerOp.button />
       </Box>
     </Box>
   );
-};
-
-export default homeHeader;
+}
