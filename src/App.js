@@ -9,6 +9,7 @@ import { Routes, Route } from 'react-router-dom';
 import { MyServiceButton } from '../src/PageComponents/styledComponents.js';
 import homeImage from '../src/PageComponents/assets/headerhome.jpg';
 import contactImage from '../src/PageComponents/assets/headercontact.jpg';
+import headerReviews from '../src/PageComponents/assets/headerReviews.jpg';
 
 const theme = createTheme({
   palette: {
@@ -35,6 +36,12 @@ function App() {
       button: MyServiceButton,
       backgroundImg: contactImage,
     },
+    {
+      title: 'Reviews From',
+      desc: 'Our Amazing Clients',
+      button: MyServiceButton,
+      backgroundImg: headerReviews,
+    },
   ];
 
   return (
@@ -46,7 +53,10 @@ function App() {
             path='/appointment'
             element={<Appointment headerOp={headerOptions[1]} />}
           />
-          <Route path='/reviews' element={<Reviews />} />
+          <Route
+            path='/reviews'
+            element={<Reviews headerOp={headerOptions[2]} />}
+          />
           <Route path='/gallery' element={<Gallery />} />
           <Route path='/team' element={<Team />} />
           <Route path='*' element={<Home />} />
