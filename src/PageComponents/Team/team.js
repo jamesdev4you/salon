@@ -89,7 +89,7 @@ const team = (props) => {
                 sx={{
                   width: '30%',
                   height: '62vh',
-                  borderWidth: '1px',
+                  borderWidth: '3px',
                   borderStyle: 'solid',
                   borderColor: primaryColor,
                   borderRadius: '15px',
