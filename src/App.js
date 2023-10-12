@@ -10,6 +10,7 @@ import { MyServiceButton } from '../src/PageComponents/styledComponents.js';
 import homeImage from '../src/PageComponents/assets/headerhome.jpg';
 import contactImage from '../src/PageComponents/assets/headercontact.jpg';
 import headerReviews from '../src/PageComponents/assets/headerReviews.jpg';
+import headerTeam from '../src/PageComponents/assets/headerTeam.jpg';
 
 const theme = createTheme({
   palette: {
@@ -42,6 +43,12 @@ function App() {
       button: MyServiceButton,
       backgroundImg: headerReviews,
     },
+    {
+      title: "Shear Beauty's",
+      desc: 'Fantastic team of specialists!',
+      button: MyServiceButton,
+      backgroundImg: headerTeam,
+    },
   ];
 
   return (
@@ -57,8 +64,8 @@ function App() {
             path='/reviews'
             element={<Reviews headerOp={headerOptions[2]} />}
           />
+          <Route path='/team' element={<Team headerOp={headerOptions[3]} />} />
           <Route path='/gallery' element={<Gallery />} />
-          <Route path='/team' element={<Team />} />
           <Route path='*' element={<Home />} />
         </Route>
       </Routes>
