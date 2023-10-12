@@ -7,7 +7,7 @@ import Woman2 from '../assets/woman2.jpg';
 import Woman3 from '../assets/woman3.jpg';
 import Woman4 from '../assets/woman4.jpg';
 import Woman5 from '../assets/woman5.jpg';
-import { MyTeamButton } from '../styledComponents.js';
+import { MyTeamButton, MyTeamButtonDark } from '../styledComponents.js';
 import '../../index.css';
 
 const team = (props) => {
@@ -19,6 +19,7 @@ const team = (props) => {
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed nibh sed sapien fermentum vulputate at vitae sapien. Donec consequat ultricies risus nec faucibus. Integer facilisis erat et dui dapibus, a ullamcorper elit mollis. Aenean in luctus lorem.',
       primaryColor: '#E4DCC0',
       backgroundColor: '#1B1E1E',
+      dabutton: <MyTeamButtonDark />,
     },
     {
       picture: Woman2,
@@ -27,6 +28,7 @@ const team = (props) => {
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed nibh sed sapien fermentum vulputate at vitae sapien. Donec consequat ultricies risus nec faucibus. Integer facilisis erat et dui dapibus, a ullamcorper elit mollis. Aenean in luctus lorem.',
       primaryColor: '#1B1E1E',
       backgroundColor: '#E4DCC0',
+      dabutton: <MyTeamButton />,
     },
     {
       picture: Woman3,
@@ -35,6 +37,7 @@ const team = (props) => {
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed nibh sed sapien fermentum vulputate at vitae sapien. Donec consequat ultricies risus nec faucibus. Integer facilisis erat et dui dapibus, a ullamcorper elit mollis. Aenean in luctus lorem.',
       primaryColor: '#E4DCC0',
       backgroundColor: '#1B1E1E',
+      dabutton: <MyTeamButtonDark />,
     },
     {
       picture: Woman4,
@@ -43,6 +46,7 @@ const team = (props) => {
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed nibh sed sapien fermentum vulputate at vitae sapien. Donec consequat ultricies risus nec faucibus. Integer facilisis erat et dui dapibus, a ullamcorper elit mollis. Aenean in luctus lorem.',
       primaryColor: '#1B1E1E',
       backgroundColor: '#E4DCC0',
+      dabutton: <MyTeamButton />,
     },
     {
       picture: Woman5,
@@ -51,6 +55,7 @@ const team = (props) => {
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed nibh sed sapien fermentum vulputate at vitae sapien. Donec consequat ultricies risus nec faucibus. Integer facilisis erat et dui dapibus, a ullamcorper elit mollis. Aenean in luctus lorem.',
       primaryColor: '#E4DCC0',
       backgroundColor: '#1B1E1E',
+      dabutton: <MyTeamButtonDark />,
     },
   ];
 
@@ -71,7 +76,15 @@ const team = (props) => {
         }}
       >
         {teamSections.map(
-          ({ picture, title, job, desc, primaryColor, backgroundColor }) => (
+          ({
+            picture,
+            title,
+            job,
+            desc,
+            primaryColor,
+            backgroundColor,
+            dabutton,
+          }) => (
             <Box
               sx={{
                 width: '100%',
@@ -145,7 +158,7 @@ const team = (props) => {
                 >
                   {desc}
                 </Typography>
-                <MyTeamButton />
+                {dabutton}
               </Box>
             </Box>
           )

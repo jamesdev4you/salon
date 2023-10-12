@@ -69,4 +69,28 @@ const MyTeamButton = (props) => (
   </Button>
 );
 
-export { MyStyledButton, MyServiceButton, MyTeamButton };
+const MyTeamButtonDark = (props) => (
+  <Button
+    variant='contained'
+    sx={{
+      paddingBottom: '5px',
+      width: '200px',
+      height: '30px',
+      background: `#C2AD90`,
+      color: '#1B1E1E',
+      fontWeight: 'bold',
+      '&:hover': {
+        color: '#C2AD90',
+        background: '#1B1E1E',
+        border: '2px solid #C2AD90',
+        fontWeight: 'bold',
+      },
+      border: '2px solid #1B1E1E',
+      marginTop: 'auto',
+    }}
+  >
+    Schedule Today!
+  </Button>
+);
+
+export { MyStyledButton, MyServiceButton, MyTeamButton, MyTeamButtonDark };
