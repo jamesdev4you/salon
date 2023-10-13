@@ -230,7 +230,7 @@ const homeMenu = () => {
                   variant='h4'
                   sx={{
                     fontFamily: 'Mono',
-                    marginBottom: '15px',
+                    marginBottom: '25px',
                     color: '#E4DCC0',
                     display: 'flex',
                     alignItems: 'center',
