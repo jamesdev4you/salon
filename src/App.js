@@ -11,6 +11,7 @@ import homeImage from '../src/PageComponents/assets/headerhome.jpg';
 import contactImage from '../src/PageComponents/assets/headercontact.jpg';
 import headerReviews from '../src/PageComponents/assets/headerReviews.jpg';
 import headerTeam from '../src/PageComponents/assets/headerTeam.jpg';
+import headerGallery from '../src/PageComponents/assets/headerGallery.jpg';
 
 const theme = createTheme({
   palette: {
@@ -49,6 +50,12 @@ function App() {
       button: MyServiceButton,
       backgroundImg: headerTeam,
     },
+    {
+      title: "The Wonderful",
+      desc: 'Gallery of our Work',
+      button: MyServiceButton,
+      backgroundImg: headerGallery,
+    },
   ];
 
   return (
@@ -65,7 +72,7 @@ function App() {
             element={<Reviews headerOp={headerOptions[2]} />}
           />
           <Route path='/team' element={<Team headerOp={headerOptions[3]} />} />
-          <Route path='/gallery' element={<Gallery />} />
+          <Route path='/gallery' element={<Gallery headerOp={headerOptions[4]}/>} />
           <Route path='*' element={<Home />} />
         </Route>
       </Routes>
