@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import { MyServiceButton } from '../styledComponents.js';
+import { useAnimation, motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const menuItems = [
   {
@@ -38,6 +40,11 @@ const menuItems = [
   },
 ];
 
+const squareVariants = {
+  visible: { opacity: 1, transition: { duration: 1.5 } },
+  hidden: { opacity: 0 },
+};
+
 var myAtoi = function (menuItems) {
   let itemsArray = Object.keys(menuItems[0]);
   let filteredItems = itemsArray.filter((item) => item.includes('item'));
@@ -55,7 +62,16 @@ var myAtoi = function (menuItems) {
   return menuItems;
 };
 
-const homeMenu = () => {
+const HomeMenu = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
   const modifiedMenuItems = myAtoi(menuItems);
 
   return (
@@ -85,8 +101,8 @@ const homeMenu = () => {
       >
         Our Menu
       </Typography>
-      <Box
-        sx={{
+      <motion.div
+        style={{
           width: '85%',
           height: '60vh',
           display: 'flex',
@@ -95,6 +111,10 @@ const homeMenu = () => {
           marginTop: '4em',
           gap: '50px',
         }}
+        animate={controls}
+        variants={squareVariants}
+        initial='hidden'
+        ref={ref}
       >
         {modifiedMenuItems.map(
           ({
@@ -246,9 +266,9 @@ const homeMenu = () => {
             </Box>
           )
         )}
-      </Box>
+      </motion.div>
     </Box>
   );
 };
 
-export default homeMenu;
+export default HomeMenu;

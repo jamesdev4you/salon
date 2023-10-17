@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Typography, SvgIcon } from '@mui/material';
 import { ReactComponent as FacialIcon } from '../assets/beauty-treatment.svg';
 import { ReactComponent as FacialIconRight } from '../assets/sheet-mask.svg';
@@ -7,6 +7,8 @@ import { ReactComponent as ManicureIconRight } from '../assets/nail-polish.svg';
 import { ReactComponent as StylistIconRight } from '../assets/hair.svg';
 import { ReactComponent as StylistIcon } from '../assets/women.svg';
 import { MyServiceButton } from '../styledComponents.js';
+import { useAnimation, motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const servicesInformation = [
   {
@@ -38,7 +40,21 @@ const servicesInformation = [
   },
 ];
 
-const homeServices = () => {
+const squareVariants = {
+  visible: { opacity: 1, transition: { duration: 1.5 } },
+  hidden: { opacity: 0 },
+};
+
+const HomeServices = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
   return (
     <Box
       sx={{
@@ -66,8 +82,8 @@ const homeServices = () => {
       >
         Our Services
       </Typography>
-      <Box
-        sx={{
+      <motion.div
+        style={{
           width: '100%',
           display: 'flex',
           alignItems: 'center',
@@ -75,11 +91,15 @@ const homeServices = () => {
           gap: '100px',
           marginTop: '80px',
         }}
+        animate={controls}
+        variants={squareVariants}
+        initial='hidden'
+        ref={ref}
       >
         {servicesInformation.map(
           ({ logo, logoRight, viewBox, viewBoxRight, title, description }) => (
             <Box
-              sx={{
+              style={{
                 width: '23%',
                 height: '60vh',
                 display: 'flex',
@@ -93,6 +113,9 @@ const homeServices = () => {
                 boxShadow:
                   'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
               }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 2 }}
             >
               <Typography
                 variant='h3'
@@ -137,9 +160,9 @@ const homeServices = () => {
             </Box>
           )
         )}
-      </Box>
+      </motion.div>
     </Box>
   );
 };
 
-export default homeServices;
+export default HomeServices;

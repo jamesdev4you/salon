@@ -105,7 +105,7 @@ const gallery = (props) => {
       <Box
         sx={{
           width: '100%',
-          height: '100vh',
+          height: 'auto',
           backgroundColor: '#1B1E1E',
           display: 'flex',
           flexDirection: 'column',
@@ -125,7 +125,7 @@ const gallery = (props) => {
         >
           Our Gallery
         </Typography>
-        <ImageList sx={{ width: '80%', height: '80vh' }}>
+        <ImageList sx={{ width: '80%', height: '100vh' }}>
           <ImageListItem key='Subheader' cols={2}>
             <ListSubheader
               component='div'
