@@ -5,6 +5,7 @@ import HomeStylists from './homeStylists.js';
 import HomeMenu from './homeMenu.js';
 import NavBar from '../NavBar/navbar.js';
 import homeimage from '../assets/headerhome.jpg';
+import Footer from '../Footer/footer.js';
 
 export default function home(props) {
   return (
@@ -14,6 +15,7 @@ export default function home(props) {
       <HomeServices />
       <HomeStylists />
       <HomeMenu />
+      <Footer />
     </div>
   );
 }

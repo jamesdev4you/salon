@@ -4,14 +4,15 @@ import Woman from '../assets/woman.jpg';
 import WomanTwo from '../assets/woman2.jpg';
 import WomanThree from '../assets/woman3.jpg';
 import WomanFour from '../assets/woman4.jpg';
-import WomanFive from '../assets/woman5.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const HomeStylists = () => {
+  const navigate = useNavigate();
+
   const [hoveredOne, setHoveredOne] = useState(false);
   const [hoveredTwo, setHoveredTwo] = useState(false);
   const [hoveredThree, setHoveredThree] = useState(false);
   const [hoveredFour, setHoveredFour] = useState(false);
-  const [hoveredFive, setHoveredFive] = useState(false);
 
   const photosStylists = [
     {
@@ -19,30 +20,28 @@ const HomeStylists = () => {
       hovered: hoveredOne,
       setHovered: setHoveredOne,
       title: 'James Boyle',
+      targetId: 'womanOne',
     },
     {
       picture: WomanTwo,
       hovered: hoveredTwo,
       setHovered: setHoveredTwo,
       title: 'James Boyle',
+      targetId: 'womanTwo',
     },
     {
       picture: WomanThree,
       hovered: hoveredThree,
       setHovered: setHoveredThree,
       title: 'James Boyle',
+      targetId: 'womanThree',
     },
     {
       picture: WomanFour,
       hovered: hoveredFour,
       setHovered: setHoveredFour,
       title: 'James Boyle',
-    },
-    {
-      picture: WomanFive,
-      hovered: hoveredFive,
-      setHovered: setHoveredFive,
-      title: 'James Boyle',
+      targetId: 'womanFour',
     },
   ];
 
@@ -79,44 +78,50 @@ const HomeStylists = () => {
           display: 'flex',
           justifyContent: 'center',
           marginTop: '100px',
+          gap: '50px',
         }}
       >
-        {photosStylists.map(({ picture, setHovered, hovered, title }) => (
-          <Box
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-            sx={{
-              width: '15vw',
-              height: '55vh',
-              backgroundImage: hovered
-                ? `linear-gradient(rgba(0, 0, 0, .6),rgba(0, 0, 0, .55)) , url(${picture})`
-                : `linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)) , url(${picture})`,
-              backgroundSize: 'cover',
-              backgroundRepeat: 'none',
-              backgroundPosition: 'bottom',
-              borderRadius: '20px',
-              cursor: 'pointer',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'start',
-              padding: hovered ? '.5em' : '0em',
-              marginLeft: '25px',
-              marginRight: '25px',
-              alignItems: 'center',
-              boxShadow:
-                'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
-            }}
-          >
-            <Typography
-              variant='h4'
+        {photosStylists.map(
+          ({ picture, setHovered, hovered, title, targetId }) => (
+            <Box
+              onMouseEnter={() => setHovered(true)}
+              onMouseLeave={() => setHovered(false)}
+              onClick={() => {
+                navigate('/team', { state: { targetId: targetId } });
+              }}
               sx={{
-                color: hovered ? 'rgba(255,255,255,1)' : 'rgba(0,0,0,0)',
+                width: '18vw',
+                height: '55vh',
+                backgroundImage: hovered
+                  ? `linear-gradient(rgba(0, 0, 0, .6),rgba(0, 0, 0, .55)) , url(${picture})`
+                  : `linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)) , url(${picture})`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'none',
+                backgroundPosition: 'bottom',
+                borderRadius: '20px',
+                cursor: 'pointer',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'start',
+                padding: hovered ? '.5em' : '0em',
+                marginLeft: '25px',
+                marginRight: '25px',
+                alignItems: 'center',
+                boxShadow:
+                  'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
               }}
             >
-              {title}
-            </Typography>
-          </Box>
-        ))}
+              <Typography
+                variant='h4'
+                sx={{
+                  color: hovered ? 'rgba(255,255,255,1)' : 'rgba(0,0,0,0)',
+                }}
+              >
+                {title}
+              </Typography>
+            </Box>
+          )
+        )}
       </Box>
     </Box>
   );

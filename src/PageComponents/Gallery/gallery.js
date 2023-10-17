@@ -21,6 +21,7 @@ import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
 import { Box, Typography } from '@mui/material';
 import { MyServiceButton } from '../styledComponents.js';
+import Footer from '../Footer/footer.js';
 
 const itemData = [
   {
@@ -151,6 +152,7 @@ const gallery = (props) => {
           ))}
         </ImageList>
       </Box>
+      <Footer />
     </div>
   );
 };

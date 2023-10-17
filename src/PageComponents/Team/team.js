@@ -9,53 +9,61 @@ import Woman4 from '../assets/woman4.jpg';
 import Woman5 from '../assets/woman5.jpg';
 import { MyTeamButton, MyTeamButtonDark } from '../styledComponents.js';
 import '../../index.css';
+import Footer from '../Footer/footer.js';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
-const team = (props) => {
+const Team = (props) => {
+  const { state } = useLocation();
+  const { targetId } = state || {};
+
+  useEffect(() => {
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView();
+    }
+  }, [targetId]);
+
   const teamSections = [
     {
       picture: Woman,
       title: 'James Boyle',
       job: 'Founder / Beauty Analyst',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed nibh sed sapien fermentum vulputate at vitae sapien. Donec consequat ultricies risus nec faucibus. Integer facilisis erat et dui dapibus, a ullamcorper elit mollis. Aenean in luctus lorem.',
-      primaryColor: '#E4DCC0',
-      backgroundColor: '#1B1E1E',
+      primaryColor: '#1B1E1E',
+      backgroundColor: '#E4DCC0',
       dabutton: <MyTeamButtonDark />,
+      section: 'womanOne',
     },
     {
       picture: Woman2,
       title: 'James Boyle',
       job: 'Founder / Beauty Analyst',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed nibh sed sapien fermentum vulputate at vitae sapien. Donec consequat ultricies risus nec faucibus. Integer facilisis erat et dui dapibus, a ullamcorper elit mollis. Aenean in luctus lorem.',
-      primaryColor: '#1B1E1E',
-      backgroundColor: '#E4DCC0',
+      primaryColor: '#E4DCC0',
+      backgroundColor: '#1B1E1E',
       dabutton: <MyTeamButton />,
+      section: 'womanTwo',
     },
     {
       picture: Woman3,
       title: 'James Boyle',
       job: 'Founder / Beauty Analyst',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed nibh sed sapien fermentum vulputate at vitae sapien. Donec consequat ultricies risus nec faucibus. Integer facilisis erat et dui dapibus, a ullamcorper elit mollis. Aenean in luctus lorem.',
-      primaryColor: '#E4DCC0',
-      backgroundColor: '#1B1E1E',
+      primaryColor: '#1B1E1E',
+      backgroundColor: '#E4DCC0',
       dabutton: <MyTeamButtonDark />,
+      section: 'womanThree',
     },
     {
       picture: Woman4,
       title: 'James Boyle',
       job: 'Founder / Beauty Analyst',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed nibh sed sapien fermentum vulputate at vitae sapien. Donec consequat ultricies risus nec faucibus. Integer facilisis erat et dui dapibus, a ullamcorper elit mollis. Aenean in luctus lorem.',
-      primaryColor: '#1B1E1E',
-      backgroundColor: '#E4DCC0',
-      dabutton: <MyTeamButton />,
-    },
-    {
-      picture: Woman5,
-      title: 'James Boyle',
-      job: 'Founder / Beauty Analyst',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed nibh sed sapien fermentum vulputate at vitae sapien. Donec consequat ultricies risus nec faucibus. Integer facilisis erat et dui dapibus, a ullamcorper elit mollis. Aenean in luctus lorem.',
       primaryColor: '#E4DCC0',
       backgroundColor: '#1B1E1E',
-      dabutton: <MyTeamButtonDark />,
+      dabutton: <MyTeamButton />,
+      section: 'womanFour',
     },
   ];
 
@@ -84,8 +92,10 @@ const team = (props) => {
             primaryColor,
             backgroundColor,
             dabutton,
+            section,
           }) => (
             <Box
+              id={section}
               sx={{
                 width: '100%',
                 height: '80vh',
@@ -164,8 +174,9 @@ const team = (props) => {
           )
         )}
       </Box>
+      <Footer />
     </div>
   );
 };
 
-export default team;
+export default Team;

@@ -119,7 +119,7 @@ const homeMenu = () => {
                 width: '33%',
                 height: '60vh',
                 padding: '15px',
-                backgroundColor: '#C2AD90',
+                backgroundColor: '#E4DCC0',
                 borderRadius: '15px',
                 borderBottom: '3px solid black',
                 boxShadow:
@@ -130,7 +130,7 @@ const homeMenu = () => {
                 sx={{
                   width: '95%',
                   height: '95%',
-                  border: '3px solid #E4DCC0',
+                  border: '3px solid #1B1E1E',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -144,7 +144,7 @@ const homeMenu = () => {
                     fontFamily: 'Birds',
                     width: '90%',
                     paddingTop: '.2em',
-                    borderBottom: '3px solid #E4DCC0',
+                    borderBottom: '3px solid #1B1E1E',
                     textAlign: 'center',
                     color: '#1B1E1E',
                   }}
@@ -156,7 +156,7 @@ const homeMenu = () => {
                   sx={{
                     fontFamily: 'Mono',
                     marginBottom: '15px',
-                    color: '#E4DCC0',
+                    color: '#1B1E1E',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -171,7 +171,7 @@ const homeMenu = () => {
                   sx={{
                     fontFamily: 'Mono',
                     marginBottom: '15px',
-                    color: '#E4DCC0',
+                    color: '#1B1E1E',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -186,7 +186,7 @@ const homeMenu = () => {
                   sx={{
                     fontFamily: 'Mono',
                     marginBottom: '15px',
-                    color: '#E4DCC0',
+                    color: '#1B1E1E',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -201,7 +201,7 @@ const homeMenu = () => {
                   sx={{
                     fontFamily: 'Mono',
                     marginBottom: '15px',
-                    color: '#E4DCC0',
+                    color: '#1B1E1E',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -216,7 +216,7 @@ const homeMenu = () => {
                   sx={{
                     fontFamily: 'Mono',
                     marginBottom: '15px',
-                    color: '#E4DCC0',
+                    color: '#1B1E1E',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -231,7 +231,7 @@ const homeMenu = () => {
                   sx={{
                     fontFamily: 'Mono',
                     marginBottom: '25px',
-                    color: '#E4DCC0',
+                    color: '#1B1E1E',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',

@@ -8,6 +8,7 @@ import Facebook from '../assets/facebook.png';
 import Instagram from '../assets/instagram.png';
 import Twitter from '../assets/twitter.png';
 import Youtube from '../assets/youtube.png';
+import Footer from '../Footer/footer.js';
 
 const appointment = (props) => {
   return (
@@ -335,6 +336,7 @@ const appointment = (props) => {
           </Box>
         </Box>
       </Box>
+      <Footer />
     </div>
   );
 };

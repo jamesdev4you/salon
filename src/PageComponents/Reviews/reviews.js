@@ -8,6 +8,7 @@ import Woman3 from '../assets/woman3.jpg';
 import Woman4 from '../assets/woman4.jpg';
 import Woman5 from '../assets/woman5.jpg';
 import '../../index.css';
+import Footer from '../Footer/footer.js';
 
 const reviews = (props) => {
   const testimonials = [
@@ -124,6 +125,7 @@ const reviews = (props) => {
           </Box>
         ))}
       </Box>
+      <Footer />
     </div>
   );
 };

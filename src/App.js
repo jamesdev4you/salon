@@ -51,7 +51,7 @@ function App() {
       backgroundImg: headerTeam,
     },
     {
-      title: "The Wonderful",
+      title: 'The Wonderful',
       desc: 'Gallery of our Work',
       button: MyServiceButton,
       backgroundImg: headerGallery,
@@ -72,7 +72,10 @@ function App() {
             element={<Reviews headerOp={headerOptions[2]} />}
           />
           <Route path='/team' element={<Team headerOp={headerOptions[3]} />} />
-          <Route path='/gallery' element={<Gallery headerOp={headerOptions[4]}/>} />
+          <Route
+            path='/gallery'
+            element={<Gallery headerOp={headerOptions[4]} />}
+          />
           <Route path='*' element={<Home />} />
         </Route>
       </Routes>
