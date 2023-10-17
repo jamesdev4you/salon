@@ -9,6 +9,7 @@ import Woman4 from '../assets/woman4.jpg';
 import Woman5 from '../assets/woman5.jpg';
 import '../../index.css';
 import Footer from '../Footer/footer.js';
+import SingleReview from './singleReview.js';
 
 const reviews = (props) => {
   const testimonials = [
@@ -71,59 +72,36 @@ const reviews = (props) => {
         >
           Testimonials
         </Typography>
-        {testimonials.map(({ picture, name, description }) => (
-          <Box
-            sx={{
-              width: '60%',
-              height: '20vh',
-              margin: '50px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '.5em',
-              paddingLeft: '2em',
-              paddingRight: '2em',
-              backgroundColor: '#E4DCC0',
-              borderRadius: '20px',
-            }}
-          >
-            <Box
-              sx={{
-                height: '10em',
-                width: '10em',
-                backgroundImage: `url(${picture})`,
-                backgroundSize: 'cover',
-                backgroundRepeat: 'none',
-                backgroundPosition: 'center',
-                borderRadius: '50%',
-                border: '3px solid #1B1E1E',
-              }}
-            />
-            <Box
-              sx={{
-                height: '10em',
-                width: '80%',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <Typography
-                variant='h5'
-                sx={{ width: '90%', textAlign: 'center' }}
-              >
-                {description}
-              </Typography>
-              <Typography
-                variant='h5'
-                sx={{ width: '90%', textAlign: 'right', fontFamily: 'Birds' }}
-              >
-                - {name}
-              </Typography>
-            </Box>
-          </Box>
-        ))}
+        <SingleReview
+          picture={testimonials[0].picture}
+          description={testimonials[0].description}
+          name={testimonials[0].name}
+        />
+        <SingleReview
+          picture={testimonials[1].picture}
+          description={testimonials[1].description}
+          name={testimonials[1].name}
+        />
+        <SingleReview
+          picture={testimonials[2].picture}
+          description={testimonials[2].description}
+          name={testimonials[2].name}
+        />
+        <SingleReview
+          picture={testimonials[3].picture}
+          description={testimonials[3].description}
+          name={testimonials[3].name}
+        />
+        <SingleReview
+          picture={testimonials[4].picture}
+          description={testimonials[4].description}
+          name={testimonials[4].name}
+        />
+        <SingleReview
+          picture={testimonials[5].picture}
+          description={testimonials[5].description}
+          name={testimonials[5].name}
+        />
       </Box>
       <Footer />
     </div>

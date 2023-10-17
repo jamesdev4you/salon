@@ -6,7 +6,6 @@ import HomeMenu from './homeMenu.js';
 import NavBar from '../NavBar/navbar.js';
 import homeimage from '../assets/headerhome.jpg';
 import Footer from '../Footer/footer.js';
-import { motion } from 'framer-motion';
 
 export default function home(props) {
   return (

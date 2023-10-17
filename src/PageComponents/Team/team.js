@@ -6,7 +6,6 @@ import Woman from '../assets/woman.jpg';
 import Woman2 from '../assets/woman2.jpg';
 import Woman3 from '../assets/woman3.jpg';
 import Woman4 from '../assets/woman4.jpg';
-import Woman5 from '../assets/woman5.jpg';
 import { MyTeamButton, MyTeamButtonDark } from '../styledComponents.js';
 import '../../index.css';
 import Footer from '../Footer/footer.js';

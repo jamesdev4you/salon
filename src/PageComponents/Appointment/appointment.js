@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Typography, Box, Link } from '@mui/material';
 import HomeHeader from '../Home/homeHeader.js';
 import NavBar from '../NavBar/navbar.js';
@@ -9,8 +9,24 @@ import Instagram from '../assets/instagram.png';
 import Twitter from '../assets/twitter.png';
 import Youtube from '../assets/youtube.png';
 import Footer from '../Footer/footer.js';
+import { useAnimation, motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
-const appointment = (props) => {
+const squareVariants = {
+  visible: { opacity: 1, transition: { duration: 1.5 } },
+  hidden: { opacity: 0 },
+};
+
+const Appointment = (props) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
   return (
     <div>
       <NavBar />
@@ -18,7 +34,7 @@ const appointment = (props) => {
       <Box
         sx={{
           width: '100%',
-          height: '95vh',
+          height: '100vh',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -53,13 +69,17 @@ const appointment = (props) => {
           <span style={{ color: 'red' }}>*</span>For first time clients please
           reach out through phone first
         </Typography>
-        <Box
-          sx={{
+        <motion.div
+          style={{
             width: '80%',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-around',
           }}
+          animate={controls}
+          variants={squareVariants}
+          initial='hidden'
+          ref={ref}
         >
           <Box
             sx={{
@@ -103,7 +123,11 @@ const appointment = (props) => {
                 Address
               </Typography>
               <Typography
-                sx={{ fontSize: '20px', color: '#E4DCC0', paddingTop: '30px' }}
+                sx={{
+                  fontSize: '20px',
+                  color: '#E4DCC0',
+                  paddingTop: '30px',
+                }}
               >
                 9602 W Linebaugh Ave, Westchase, FL 33626
               </Typography>
@@ -334,11 +358,11 @@ const appointment = (props) => {
               </Box>
             </Box>
           </Box>
-        </Box>
+        </motion.div>
       </Box>
       <Footer />
     </div>
   );
 };
 
-export default appointment;
+export default Appointment;
