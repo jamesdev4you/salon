@@ -7,6 +7,7 @@ import WomanFour from '../assets/woman4.jpg';
 import { useNavigate } from 'react-router-dom';
 import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import '../../index.css';
 
 const HomeStylists = () => {
   const controls = useAnimation();
@@ -65,7 +66,7 @@ const HomeStylists = () => {
     <Box
       sx={{
         width: '100%',
-        height: '90vh',
+        height: { md: 'auto', lg: '90vh', xl: '95vh' },
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -74,7 +75,13 @@ const HomeStylists = () => {
         backgroundRepeat: 'none',
         backgroundPosition: 'center',
         background: '#C2AD90',
-        paddingTop: '150px',
+        paddingTop: {
+          xs: '50px',
+          sm: '50px',
+          md: '50px',
+          lg: '150px',
+          xl: '180px',
+        },
       }}
     >
       <motion.div
@@ -96,11 +103,26 @@ const HomeStylists = () => {
         <Box
           sx={{
             width: '100%',
-            height: '60vh',
+            height: { md: 'auto', lg: '60vh', xl: '60vh' },
             display: 'flex',
+            flexDirection: {
+              xs: 'column',
+              sm: 'column',
+              md: 'column',
+              lg: 'row',
+              xl: 'row',
+            },
             justifyContent: 'center',
-            marginTop: '100px',
-            gap: '50px',
+            alignItems: 'center',
+            marginTop: {
+              xs: '50px',
+              sm: '50px',
+              md: '50px',
+              lg: '150px',
+              xl: '70px',
+            },
+            gap: { xs: '30px', sm: '30px', md: '30px', xl: '20px' },
+            marginBottom: { xs: '50px', sm: '30px', md: '30px', xl: '20px' },
           }}
         >
           {photosStylists.map(
@@ -112,8 +134,14 @@ const HomeStylists = () => {
                   navigate('/team', { state: { targetId: targetId } });
                 }}
                 sx={{
-                  width: '18vw',
-                  height: '55vh',
+                  width: {
+                    xs: '80vw',
+                    sm: '50vw',
+                    md: '50vw',
+                    lg: '20vw',
+                    xl: '18vw',
+                  },
+                  height: '60vh',
                   backgroundImage: hovered
                     ? `linear-gradient(rgba(0, 0, 0, .6),rgba(0, 0, 0, .55)) , url(${picture})`
                     : `linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)) , url(${picture})`,
@@ -129,6 +157,7 @@ const HomeStylists = () => {
                   marginLeft: '25px',
                   marginRight: '25px',
                   alignItems: 'center',
+                  border: '3px solid #191C1C',
                   boxShadow:
                     'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
                 }}

@@ -7,7 +7,7 @@ export default function homeHeader(props) {
     <Box
       sx={{
         width: '100%',
-        height: '100vh',
+        height: '95vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -25,24 +25,22 @@ export default function homeHeader(props) {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          width: '600px',
-          height: '300px',
+          width: { lg: '600px', md: '400px', sm: '400px', xs: '90vw'},
+          height: { lg: '300px', md: '25vh', sm: '25vh', xs: '25vh'},
           background: '#E4DCC0',
           borderRadius: '15px',
           border: '4px solid #1B1E1E',
         }}
       >
         <Typography
-          variant='h1'
           color='primary.main'
-          sx={{ fontFamily: 'Birds' }}
+          sx={{ fontFamily: 'Birds', fontSize: {lg: '98px', md: '64px', sm: '64px',  xs: '74px'}, lineHeight: {xs: '.7em', sm:'.7em', md: '1em', lg: '1em', } }}
         >
           {props.headerOp.title}
         </Typography>
         <Typography
-          variant='h3'
           color='primary.main'
-          sx={{ marginBottom: '15px', fontFamily: 'Birds' }}
+          sx={{ fontFamily: 'Birds', fontSize: {lg: '58px', md: '44px', sm: '44px', xs: '44px'},}}
         >
           {props.headerOp.desc}
         </Typography>

@@ -78,7 +78,7 @@ const HomeMenu = () => {
     <Box
       sx={{
         width: '100%',
-        height: '100vh',
+        height: 'auto',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -87,30 +87,23 @@ const HomeMenu = () => {
         backgroundRepeat: 'none',
         backgroundPosition: 'center',
         background: '#1B1E1E',
-        paddingTop: '7em',
+        paddingTop: '50px',
+        paddingBottom: '7em',
       }}
     >
       <Typography
-        variant='h1'
         sx={{
           textAlign: 'center',
           marginBottom: '15px',
           fontFamily: 'Birds',
+          fontSize: { lg: '98px', md: '64px', sm: '64px', xs: '70px' },
         }}
         color='secondary.main'
       >
         Our Menu
       </Typography>
       <motion.div
-        style={{
-          width: '85%',
-          height: '60vh',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginTop: '4em',
-          gap: '50px',
-        }}
+        className='homeMenuBox'
         animate={controls}
         variants={squareVariants}
         initial='hidden'
@@ -136,8 +129,20 @@ const HomeMenu = () => {
                 justifyContent: 'center',
                 flexDirection: 'column',
                 fontAlign: 'center',
-                width: '33%',
-                height: '60vh',
+                width: {
+                  xs: '90%',
+                  sm: '70%',
+                  md: '550px',
+                  lg: '550px',
+                  xl: '550px',
+                },
+                height: {
+                  xs: '450px',
+                  sm: '550px',
+                  md: '60vh',
+                  lg: '60vh',
+                  xl: '60vh',
+                },
                 padding: '15px',
                 backgroundColor: '#E4DCC0',
                 borderRadius: '15px',
@@ -158,8 +163,15 @@ const HomeMenu = () => {
                 }}
               >
                 <Typography
-                  variant='h1'
                   sx={{
+                    fontSize: {
+                      xs: '50px',
+                      sm: '60px',
+                      md: '90px',
+                      lg: '60px',
+                      xl: '80px',
+                    },
+                    lineHeight: '1em',
                     marginBottom: '15px',
                     fontFamily: 'Birds',
                     width: '90%',
@@ -172,8 +184,15 @@ const HomeMenu = () => {
                   {title}
                 </Typography>
                 <Typography
-                  variant='h4'
                   sx={{
+                    fontSize: {
+                      xs: '20px',
+                      sm: '32px',
+                      md: '34px',
+                      lg: '30px',
+                      xl: '34px',
+                    },
+                    lineHeight: '1em',
                     fontFamily: 'Mono',
                     marginBottom: '15px',
                     color: '#1B1E1E',
@@ -187,8 +206,15 @@ const HomeMenu = () => {
                   {price}
                 </Typography>
                 <Typography
-                  variant='h4'
                   sx={{
+                    fontSize: {
+                      xs: '20px',
+                      sm: '32px',
+                      md: '34px',
+                      lg: '30px',
+                      xl: '34px',
+                    },
+                    lineHeight: '1em',
                     fontFamily: 'Mono',
                     marginBottom: '15px',
                     color: '#1B1E1E',
@@ -202,8 +228,15 @@ const HomeMenu = () => {
                   {price}
                 </Typography>
                 <Typography
-                  variant='h4'
                   sx={{
+                    fontSize: {
+                      xs: '20px',
+                      sm: '32px',
+                      md: '34px',
+                      lg: '30px',
+                      xl: '34px',
+                    },
+                    lineHeight: '1em',
                     fontFamily: 'Mono',
                     marginBottom: '15px',
                     color: '#1B1E1E',
@@ -217,8 +250,15 @@ const HomeMenu = () => {
                   {price}
                 </Typography>
                 <Typography
-                  variant='h4'
                   sx={{
+                    fontSize: {
+                      xs: '20px',
+                      sm: '32px',
+                      md: '34px',
+                      lg: '30px',
+                      xl: '34px',
+                    },
+                    lineHeight: '1em',
                     fontFamily: 'Mono',
                     marginBottom: '15px',
                     color: '#1B1E1E',
@@ -232,8 +272,15 @@ const HomeMenu = () => {
                   {price}
                 </Typography>
                 <Typography
-                  variant='h4'
                   sx={{
+                    fontSize: {
+                      xs: '20px',
+                      sm: '32px',
+                      md: '34px',
+                      lg: '30px',
+                      xl: '34px',
+                    },
+                    lineHeight: '1em',
                     fontFamily: 'Mono',
                     marginBottom: '15px',
                     color: '#1B1E1E',
@@ -247,10 +294,17 @@ const HomeMenu = () => {
                   {price}
                 </Typography>
                 <Typography
-                  variant='h4'
                   sx={{
+                    fontSize: {
+                      xs: '20px',
+                      sm: '32px',
+                      md: '34px',
+                      lg: '30px',
+                      xl: '34px',
+                    },
+                    lineHeight: '1em',
                     fontFamily: 'Mono',
-                    marginBottom: '25px',
+                    marginBottom: '1em',
                     color: '#1B1E1E',
                     display: 'flex',
                     alignItems: 'center',

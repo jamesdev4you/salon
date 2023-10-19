@@ -46,7 +46,7 @@ function App() {
     },
     {
       title: "Shear Beauty's",
-      desc: 'Fantastic team of specialists!',
+      desc: 'Fantastic team!',
       button: MyServiceButton,
       backgroundImg: headerTeam,
     },
