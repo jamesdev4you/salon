@@ -25,7 +25,7 @@ export default function homeHeader(props) {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          width: { lg: '600px', md: '400px', sm: '400px', xs: '95vw' },
+          width: { lg: '600px', md: '400px', sm: '400px', xs: '98vw' },
           height: { lg: '300px', md: '25vh', sm: '25vh', xs: '30vh' },
           background: '#E4DCC0',
           borderRadius: '15px',

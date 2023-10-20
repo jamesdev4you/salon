@@ -69,8 +69,12 @@ const reviews = (props) => {
         }}
       >
         <Typography
-          variant='h1'
-          sx={{ paddingTop: '50px', fontFamily: 'Birds', color: '#E4DCC0' }}
+          sx={{
+            paddingTop: '50px',
+            fontFamily: 'Birds',
+            color: '#E4DCC0',
+            fontSize: { lg: '98px', md: '64px', sm: '64px', xs: '60px' },
+          }}
         >
           Testimonials
         </Typography>

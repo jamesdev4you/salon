@@ -97,13 +97,25 @@ const Team = (props) => {
               id={section}
               sx={{
                 width: '100%',
-                height: '80vh',
+                height: {
+                  xs: 'auto',
+                  sm: 'auto',
+                  md: 'auto',
+                  lg: 'auto',
+                  xl: '80vh',
+                },
                 display: 'flex',
                 flexDirection: 'row',
                 justifyContent: 'center',
                 alignItems: 'center',
                 gap: '50px',
-                padding: '14em',
+                padding: {
+                  xs: 'none',
+                  sm: 'none',
+                  md: 'none',
+                  lg: '1em',
+                  xl: '14em',
+                },
                 backgroundColor: backgroundColor,
               }}
             >
@@ -118,51 +130,132 @@ const Team = (props) => {
                   background: `url(${picture})`,
                   backgroundSize: 'cover',
                   backgroundRepeat: 'none',
-                  backgroundPosition: 'bottom',
+                  backgroundPosition: 'center',
+                  display: {
+                    xs: 'none',
+                    sm: 'none',
+                    md: 'none',
+                    lg: 'none',
+                    xl: 'flex',
+                  },
                 }}
               />
               <Box
                 sx={{
-                  width: '70%',
-                  height: '62vh',
+                  width: {
+                    xs: '90%',
+                    sm: '90%',
+                    md: '90%',
+                    lg: '80%',
+                    xl: '70%',
+                  },
+                  height: {
+                    xs: 'none',
+                    sm: 'none',
+                    md: 'none',
+                    lg: 'auto',
+                    xl: '62vh',
+                  },
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'start',
                   alignItems: 'center',
                   gap: '15px',
-                  borderWidth: '3px',
+                  borderWidth: {
+                    xs: '0px',
+                    sm: '0px',
+                    md: '0px',
+                    lg: '0px',
+                    xl: '3px',
+                  },
                   borderStyle: 'solid',
-                  borderColor: primaryColor,
+                  borderColor: {
+                    xs: 'none',
+                    sm: 'none',
+                    md: 'none',
+                    lg: 'none',
+                    xl: primaryColor,
+                  },
                   borderRadius: '15px',
                   padding: '15px',
                 }}
               >
+                <Box
+                  sx={{
+                    width: {
+                      xs: '200px',
+                      sm: '200px',
+                      md: '300px',
+                      lg: '300px',
+                      xl: 'none',
+                    },
+                    height: {
+                      xs: '200px',
+                      sm: '200px',
+                      md: '300px',
+                      lg: '300px',
+                      xl: 'none',
+                    },
+                    borderColor: primaryColor,
+                    borderWidth: '3px',
+                    borderStyle: 'solid',
+                    borderRadius: '50%',
+                    background: `url(${picture})`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'none',
+                    backgroundPosition: 'center',
+                    display: {
+                      xs: 'flex',
+                      sm: 'flex',
+                      md: 'flex',
+                      lg: 'flex',
+                      xl: 'none',
+                    },
+                  }}
+                />
                 <Typography
-                  variant='h1'
-                  sx={{ color: primaryColor, fontFamily: 'Birds' }}
+                  sx={{
+                    color: primaryColor,
+                    fontFamily: 'Birds',
+                    fontSize: {
+                      lg: '98px',
+                      md: '64px',
+                      sm: '64px',
+                      xs: '60px',
+                    },
+                  }}
                 >
                   {title}
                 </Typography>
                 <Typography
-                  variant='h4'
-                  sx={{ color: primaryColor, fontFamily: 'Birds' }}
+                  sx={{
+                    color: primaryColor,
+                    fontFamily: 'Birds',
+                    fontSize: {
+                      xl: '50px',
+                      lg: '58px',
+                      md: '54px',
+                      sm: '44px',
+                      xs: '24px',
+                    },
+                  }}
                 >
                   {job}
                 </Typography>
                 <Typography
-                  variant='h6'
+                  variant='p'
                   sx={{ color: primaryColor, width: '90%' }}
                 >
                   {desc}
                 </Typography>
                 <Typography
-                  variant='h6'
+                  variant='p'
                   sx={{ color: primaryColor, width: '90%' }}
                 >
                   {desc}
                 </Typography>
                 <Typography
-                  variant='h6'
+                  variant='p'
                   sx={{ color: primaryColor, width: '90%' }}
                 >
                   {desc}

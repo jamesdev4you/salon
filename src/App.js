@@ -33,7 +33,7 @@ function App() {
       backgroundImg: homeImage,
     },
     {
-      title: 'Book Today',
+      title: 'Book Now',
       desc: '& Begin Beauty',
       button: MyServiceButton,
       backgroundImg: contactImage,
@@ -45,13 +45,13 @@ function App() {
       backgroundImg: headerReviews,
     },
     {
-      title: "Shear Beauty's",
-      desc: 'Fantastic team!',
+      title: 'Shear Bliss',
+      desc: 'Fantastic Team!',
       button: MyServiceButton,
       backgroundImg: headerTeam,
     },
     {
-      title: 'The Wonderful',
+      title: "Bliss Pic's",
       desc: 'Gallery of our Work',
       button: MyServiceButton,
       backgroundImg: headerGallery,

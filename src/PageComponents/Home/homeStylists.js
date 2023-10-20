@@ -91,11 +91,11 @@ const HomeStylists = () => {
         ref={ref}
       >
         <Typography
-          variant='h1'
           sx={{
             textAlign: 'center',
             marginBottom: '15px',
             fontFamily: 'Birds',
+            fontSize: { lg: '98px', md: '64px', sm: '64px', xs: '70px' },
           }}
         >
           Our Stylists

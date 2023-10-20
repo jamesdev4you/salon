@@ -114,26 +114,31 @@ const gallery = (props) => {
         }}
       >
         <Typography
-          variant='h1'
           sx={{
             textAlign: 'center',
             marginBottom: '15px',
             fontFamily: 'Birds',
             paddingTop: '.8em',
+            fontSize: { lg: '98px', md: '64px', sm: '64px', xs: '70px' },
           }}
           color='secondary.main'
         >
           Our Gallery
         </Typography>
-        <ImageList sx={{ width: '80%', height: '100vh' }}>
-          <ImageListItem key='Subheader' cols={2}>
-            <ListSubheader
-              component='div'
-              sx={{ backgroundColor: '#E4DCC0', color: '#1B1E1E' }}
-            >
-              Click on the button below photos to set up an appointment!
-            </ListSubheader>
-          </ImageListItem>
+        <ImageList
+          sx={{
+            width: {
+              xs: '100%',
+              sm: '100%',
+              md: '80%',
+              lg: '80%',
+              xl: '80%',
+            },
+            marginBottom: '100px',
+            marginTop: '100px',
+            border: '1px solid #E4DCC0',
+          }}
+        >
           {itemData.map((item) => (
             <ImageListItem key={item.img}>
               <img
@@ -146,7 +151,16 @@ const gallery = (props) => {
                 title={item.title}
                 subtitle={item.author}
                 actionIcon={<MyServiceButton />}
-                sx={{ paddingRight: '15px' }}
+                sx={{
+                  paddingRight: '15px',
+                  display: {
+                    xs: 'none',
+                    sm: 'none',
+                    md: 'none',
+                    lg: 'flex',
+                    xl: 'flex',
+                  },
+                }}
               />
             </ImageListItem>
           ))}
