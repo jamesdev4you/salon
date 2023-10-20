@@ -15,37 +15,37 @@ const reviews = (props) => {
   const testimonials = [
     {
       picture: Woman,
-      name: 'James Boyle',
+      name: '- James Boyle',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla sem, posuere sodales molestie dictum, gravida id nisl. In hac habitasse platea dictumst. In rutrum est vel libero mattis.',
     },
     {
       picture: Woman2,
-      name: 'James Boyle',
+      name: '- James Boyle',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla sem, posuere sodales molestie dictum, gravida id nisl. In hac habitasse platea dictumst. In rutrum est vel libero mattis.',
     },
     {
       picture: Woman3,
-      name: 'James Boyle',
+      name: '- James Boyle',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla sem, posuere sodales molestie dictum, gravida id nisl. In hac habitasse platea dictumst. In rutrum est vel libero mattis.',
     },
     {
       picture: Woman4,
-      name: 'James Boyle',
+      name: '- James Boyle',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla sem, posuere sodales molestie dictum, gravida id nisl. In hac habitasse platea dictumst. In rutrum est vel libero mattis.',
     },
     {
       picture: Woman5,
-      name: 'James Boyle',
+      name: '- James Boyle',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla sem, posuere sodales molestie dictum, gravida id nisl. In hac habitasse platea dictumst. In rutrum est vel libero mattis.',
     },
     {
       picture: Woman,
-      name: 'James Boyle',
+      name: '- James Boyle',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla sem, posuere sodales molestie dictum, gravida id nisl. In hac habitasse platea dictumst. In rutrum est vel libero mattis.',
     },
@@ -64,6 +64,8 @@ const reviews = (props) => {
           alignItems: 'center',
           justifyContent: 'center',
           backgroundColor: '#1B1E1E',
+          gap: '50px',
+          paddingBottom: '50px',
         }}
       >
         <Typography

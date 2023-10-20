@@ -11,6 +11,7 @@ import Youtube from '../assets/youtube.png';
 import Footer from '../Footer/footer.js';
 import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import '../../index.css';
 
 const squareVariants = {
   visible: { opacity: 1, transition: { duration: 1.5 } },
@@ -34,7 +35,13 @@ const Appointment = (props) => {
       <Box
         sx={{
           width: '100%',
-          height: '100vh',
+          height: {
+            xl: '110vh',
+            lg: '110vh',
+            md: 'auto',
+            sm: 'auto',
+            xs: 'auto',
+          },
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -47,35 +54,57 @@ const Appointment = (props) => {
         }}
       >
         <Typography
-          variant='h1'
           color='secondary.main'
           sx={{
             textAlign: 'center',
             marginBottom: '15px',
             fontFamily: 'Birds',
+            fontSize: { lg: '98px', md: '64px', sm: '64px', xs: '70px' },
           }}
         >
           Get In Touch
         </Typography>
         <Typography
-          variant='h4'
           color='secondary.main'
           sx={{
             textAlign: 'center',
             marginBottom: '3%',
             fontFamily: 'Birds',
+            fontSize: {
+              xs: '30px',
+              sm: '60px',
+              md: '35px',
+              lg: '40px',
+              xl: '60px',
+            },
+            paddingLeft: {
+              xs: '5px',
+              sm: '0px',
+              md: '0px',
+              lg: '0px',
+              xl: '0px',
+            },
+            paddingRight: {
+              xs: '5px',
+              sm: '0px',
+              md: '0px',
+              lg: '0px',
+              xl: '0px',
+            },
+            paddingBottom: {
+              xs: '50px',
+              sm: '0px',
+              md: '0px',
+              lg: '0px',
+              xl: '0px',
+            },
           }}
         >
           <span style={{ color: 'red' }}>*</span>For first time clients please
           reach out through phone first
         </Typography>
         <motion.div
-          style={{
-            width: '80%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-around',
-          }}
+          className='contactFlexBox'
           animate={controls}
           variants={squareVariants}
           initial='hidden'
@@ -83,26 +112,51 @@ const Appointment = (props) => {
         >
           <Box
             sx={{
-              width: '35%',
+              width: {
+                xl: '40%',
+                lg: '50%',
+                md: '60%',
+                sm: '90%',
+                xs: '100%',
+              },
               height: '60vh',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              marginBottom: {
+                xl: '0px',
+                lg: '0px',
+                md: '50px',
+                sm: '50px',
+                xs: '50px',
+              },
+              marginTop: {
+                xl: '0px',
+                lg: '0px',
+                md: '50px',
+                sm: '50px',
+                xs: '50px',
+              },
             }}
           >
             <ContactForm />
           </Box>
           <Box
             sx={{
-              height: '60vh',
+              height: {
+                xl: '60vh',
+                lg: '60vh',
+                md: 'auto',
+                sm: 'auto',
+                xs: 'auto',
+              },
               width: {
                 xl: '40%',
-                lg: '60%',
+                lg: '40%',
                 md: '100%',
                 sm: '100%',
                 xs: '100%',
               },
-
               marginBottom: '50px',
             }}
           >
@@ -143,12 +197,18 @@ const Appointment = (props) => {
                 paddingTop: '30px',
                 flexDirection: {
                   xl: 'row',
-                  lg: 'column',
-                  md: 'column',
+                  lg: 'row',
+                  md: 'row',
                   sm: 'column',
                   xs: 'column',
                 },
-                borderBottom: '1px solid #E4DCC0',
+                borderBottom: {
+                  xl: '1px solid #E4DCC0',
+                  lg: '1px solid #E4DCC0',
+                  md: '1px solid #E4DCC0',
+                  sm: 'none',
+                  xs: 'none',
+                },
               }}
             >
               <Box
@@ -157,8 +217,8 @@ const Appointment = (props) => {
                   width: '100%',
                   borderBottom: {
                     xl: 'none',
-                    lg: '1px solid #E4DCC0',
-                    md: '1px solid #E4DCC0',
+                    lg: 'none',
+                    md: 'none',
                     sm: '1px solid #E4DCC0',
                     xs: '1px solid #E4DCC0',
                   },
@@ -192,17 +252,26 @@ const Appointment = (props) => {
                 sx={{
                   marginLeft: {
                     xl: '30%',
-                    lg: '0%',
-                    md: '0%',
+                    lg: '10%',
+                    md: '10%',
                     sm: '0%',
                     xs: '0%',
                   },
-                  marginTop: {
-                    xl: '0%',
-                    lg: '30px',
-                    md: '30px',
-                    sm: '30px',
-                    xs: '30px',
+                  height: '170px',
+                  width: '100%',
+                  borderBottom: {
+                    xl: 'none',
+                    lg: 'none',
+                    md: 'none',
+                    sm: '1px solid #E4DCC0',
+                    xs: '1px solid #E4DCC0',
+                  },
+                  paddingTop: {
+                    xl: 'none',
+                    lg: 'none',
+                    md: 'none',
+                    sm: '18px',
+                    xs: '18px',
                   },
                 }}
               >
@@ -258,14 +327,14 @@ const Appointment = (props) => {
                     sx={{
                       height: {
                         xl: '60px',
-                        lg: '100px',
+                        lg: '60px',
                         md: '60px',
                         sm: '60px',
                         xs: '40px',
                       },
                       width: {
                         xl: '60px',
-                        lg: '100px',
+                        lg: '60px',
                         md: '60px',
                         sm: '60px',
                         xs: '40px',
@@ -283,14 +352,14 @@ const Appointment = (props) => {
                     sx={{
                       height: {
                         xl: '60px',
-                        lg: '100px',
+                        lg: '60px',
                         md: '60px',
                         sm: '60px',
                         xs: '40px',
                       },
                       width: {
                         xl: '60px',
-                        lg: '100px',
+                        lg: '60px',
                         md: '60px',
                         sm: '60px',
                         xs: '40px',
@@ -308,14 +377,14 @@ const Appointment = (props) => {
                     sx={{
                       height: {
                         xl: '60px',
-                        lg: '100px',
+                        lg: '60px',
                         md: '60px',
                         sm: '60px',
                         xs: '40px',
                       },
                       width: {
                         xl: '60px',
-                        lg: '100px',
+                        lg: '60px',
                         md: '60px',
                         sm: '60px',
                         xs: '40px',
@@ -334,14 +403,14 @@ const Appointment = (props) => {
                     sx={{
                       height: {
                         xl: '60px',
-                        lg: '100px',
+                        lg: '60px',
                         md: '60px',
                         sm: '60px',
                         xs: '40px',
                       },
                       width: {
                         xl: '60px',
-                        lg: '100px',
+                        lg: '60px',
                         md: '60px',
                         sm: '60px',
                         xs: '40px',

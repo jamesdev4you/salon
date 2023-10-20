@@ -39,8 +39,8 @@ function App() {
       backgroundImg: contactImage,
     },
     {
-      title: 'Reviews From',
-      desc: 'Our Amazing Clients',
+      title: 'Testimonials',
+      desc: 'by Amazing Clients',
       button: MyServiceButton,
       backgroundImg: headerReviews,
     },

@@ -42,9 +42,21 @@ code {
   gap: 50px;
 }
 
+.contactFlexBox {
+  width: 80%;
+  gap: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 @media only screen and (max-width: 1200px) {
   .homeMenuBox {
     height: auto;
+    flex-direction: column;
+  }
+
+  .contactFlexBox {
     flex-direction: column;
   }
 }
@@ -60,6 +72,10 @@ code {
 }
 
 @media only screen and (max-width: 600px) {
+  .contactFlexBox {
+    gap: 50px;
+    width: 90%;
+  }
 }
 
 @media only screen and (max-width: 400px) {

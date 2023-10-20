@@ -36,17 +36,17 @@ export default function NavBar(props) {
   const drawer = (
     <Box
       onClick={handleDrawerToggle}
-      sx={{ textAlign: 'center', backgroundColor: 'primary.main' }}
+      sx={{ textAlign: 'center', backgroundColor: '#E4DCC0' }}
     >
       <img src={Logo} alt='yooo' style={{ height: '150px', width: '150px' }} />
-      <Divider sx={{ backgroundColor: 'white' }} />
-      <List>
+      <Divider sx={{ backgroundColor: '#1B1E1E' }} />
+      <List sx={{ backgroundColor: '#E4DCC0' }}>
         {navItems.map((item) => (
           <ListItem key={item.text} sx={{ margin: '15px 0px' }} disablePadding>
             <NavLink
               style={{
                 textDecoration: 'none',
-                color: 'white',
+                color: '#1B1E1E',
                 fontFamily: 'Ubuntu',
                 fontSize: '20px',
                 margin: 'auto',
@@ -73,7 +73,7 @@ export default function NavBar(props) {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: 'block', md: 'none' } }}
           >
-            <MenuIcon />
+            <MenuIcon sx={{ color: '#1B1E1E' }} />
           </IconButton>
           <Box
             alt='yooo'
@@ -115,7 +115,7 @@ export default function NavBar(props) {
           </Box>
         </Toolbar>
       </AppBar>
-      <Box component='nav'>
+      <Box component='nav' sx={{ backgroundColor: '#E4DCC0' }}>
         <Drawer
           variant='temporary'
           open={mobileOpen}
@@ -128,7 +128,7 @@ export default function NavBar(props) {
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
-              backgroundColor: 'white',
+              backgroundColor: '#E4DCC0',
             },
           }}
         >
