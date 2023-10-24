@@ -5,10 +5,10 @@ import {schemaTypes} from './schemas'
 
 export default defineConfig({
   name: 'default',
-  title: 'Shear Bliss',
+  title: 'Sanity Project',
 
-  projectId: '4dnp66yc',
-  dataset: 'sanity',
+  projectId: '5a2uwhtx',
+  dataset: 'production',
 
   plugins: [deskTool(), visionTool()],
 
