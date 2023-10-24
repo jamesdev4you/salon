@@ -18,11 +18,12 @@ const client = createClient({
   projectId: '5a2uwhtx',
   dataset: 'production',
   useCdn: true,
-  apiVersion: '2023-10-24',
 });
 
-const data = await client.fetch(`count(*)`);
-console.log(`Number of documents: ${data}`);
+client
+  .fetch(`count(*)`)
+  .then((data) => console.log(`Number of documents: ${data}`))
+  .catch(console.error);
 
 const theme = createTheme({
   palette: {
