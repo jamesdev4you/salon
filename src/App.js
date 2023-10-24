@@ -12,6 +12,17 @@ import contactImage from '../src/PageComponents/assets/headercontact.jpg';
 import headerReviews from '../src/PageComponents/assets/headerReviews.jpg';
 import headerTeam from '../src/PageComponents/assets/headerTeam.jpg';
 import headerGallery from '../src/PageComponents/assets/headerGallery.jpg';
+import { createClient } from '@sanity/client';
+
+const client = createClient({
+  projectId: '5a2uwhtx',
+  dataset: 'production',
+  useCdn: true,
+  apiVersion: '2023-10-24',
+});
+
+const data = await client.fetch(`count(*)`);
+console.log(`Number of documents: ${data}`);
 
 const theme = createTheme({
   palette: {
