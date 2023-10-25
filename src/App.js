@@ -30,16 +30,15 @@ function App() {
     client
       .fetch(query)
       .then((queryResponse) => {
-        console.log('Query Response:', queryResponse);
+        console.log('Query Response', queryResponse);
         const updatedHeaderOptions = queryResponse.map((item) => {
           return {
             background: item.backgroundImage.asset._ref,
             title: item.heading,
             desc: item.tagline,
-            button: MyServiceButton,
+            Button: MyServiceButton,
           };
         });
-        console.log('yo', headerOptions);
         setHeaderOptions(updatedHeaderOptions);
       })
       .catch(console.error);

@@ -7,6 +7,8 @@ import imageUrlBuilder from '@sanity/image-url';
 import client from '../../sanityClient';
 
 export default function homeHeader(props) {
+  const { title, desc, Button, background } = props.headerOp || {};
+
   const builder = imageUrlBuilder(client);
 
   function urlFor(source) {
@@ -22,7 +24,7 @@ export default function homeHeader(props) {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundImage: `url(${urlFor(props.headerOp.background)})`,
+        backgroundImage: `url(${urlFor(background)})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'none',
         backgroundPosition: 'center',
@@ -50,7 +52,7 @@ export default function homeHeader(props) {
             lineHeight: { xs: '.7em', sm: '.7em', md: '1em', lg: '1em' },
           }}
         >
-          {props.headerOp.title}
+          {title}
         </Typography>
         <Typography
           color='primary.main'
@@ -59,9 +61,9 @@ export default function homeHeader(props) {
             fontSize: { lg: '58px', md: '44px', sm: '44px', xs: '44px' },
           }}
         >
-          {props.headerOp.desc}
+          {desc}
         </Typography>
-        <props.headerOp.button />
+        <Button />
       </Box>
     </Box>
   );

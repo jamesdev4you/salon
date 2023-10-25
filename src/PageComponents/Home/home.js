@@ -8,10 +8,12 @@ import homeimage from '../assets/headerhome.jpg';
 import Footer from '../Footer/footer.js';
 
 export default function home(props) {
+  const { headerOp } = props;
+
   return (
     <div>
       <NavBar />
-      <HomeHeader headerOp={props.headerOp} />
+      {headerOp && <HomeHeader headerOp={props.headerOp} />}
       <HomeServices />
       <HomeStylists />
       <HomeMenu />

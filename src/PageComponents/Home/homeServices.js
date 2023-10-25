@@ -60,7 +60,7 @@ const HomeServices = () => {
     <Box
       sx={{
         width: '100%',
-        height: {sm: 'auto', md: '73vh', lg: '83vh', xl: '83vh'},
+        height: { sm: 'auto', md: '73vh', lg: '83vh', xl: '83vh' },
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -78,13 +78,13 @@ const HomeServices = () => {
           textAlign: 'center',
           marginBottom: '15px',
           fontFamily: 'Birds',
-          fontSize: {lg: '98px', md: '64px', sm: '64px',  xs: '70px'},
+          fontSize: { lg: '98px', md: '64px', sm: '64px', xs: '70px' },
         }}
       >
         Our Services
       </Typography>
       <motion.div
-      className='stylesFlexBox'
+        className='stylesFlexBox'
         animate={controls}
         variants={squareVariants}
         initial='hidden'
@@ -93,9 +93,22 @@ const HomeServices = () => {
         {servicesInformation.map(
           ({ logo, logoRight, viewBox, viewBoxRight, title, description }) => (
             <Box
+              key={title}
               sx={{
-                height: {xs: '30em', sm: '30em', md: '32em', lg: '40em', xl: '40em'},
-                width: {xs: '20em', sm: '30em', md: '18em', lg: '23em', xl: '30em'},
+                height: {
+                  xs: '30em',
+                  sm: '30em',
+                  md: '32em',
+                  lg: '40em',
+                  xl: '40em',
+                },
+                width: {
+                  xs: '20em',
+                  sm: '30em',
+                  md: '18em',
+                  lg: '23em',
+                  xl: '30em',
+                },
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
@@ -109,18 +122,32 @@ const HomeServices = () => {
               }}
             >
               <Typography
-                sx={{ color: 'primary.main', fontFamily: 'Birds', fontSize: {xs: '40px',sm: '60px', md: '35px', lg: '40px', xl: '60px'}}}
+                sx={{
+                  color: 'primary.main',
+                  fontFamily: 'Birds',
+                  fontSize: {
+                    xs: '40px',
+                    sm: '60px',
+                    md: '35px',
+                    lg: '40px',
+                    xl: '60px',
+                  },
+                }}
               >
-
                 <SvgIcon
                   component={logoRight}
                   viewBox={viewBoxRight}
                   sx={{
-                    height: {md: '30px', xl:'50px'},
-                    width: {md: '30px', xl:'50px'},
+                    height: { md: '30px', xl: '50px' },
+                    width: { md: '30px', xl: '50px' },
                     color: '#000000',
                     marginRight: '15px',
-                    display: {xs: 'none', sm: 'none', md: 'none', lg: 'inline'}
+                    display: {
+                      xs: 'none',
+                      sm: 'none',
+                      md: 'none',
+                      lg: 'inline',
+                    },
                   }}
                 />
                 {title}
@@ -128,8 +155,8 @@ const HomeServices = () => {
                   component={logo}
                   viewBox={viewBox}
                   sx={{
-                    height: {xs: '30px', sm: '60px', md: '35px', xl:'50px'},
-                    width: {xs:'30px', sm: '60px', md: '35px', xl:'50px'},
+                    height: { xs: '30px', sm: '60px', md: '35px', xl: '50px' },
+                    width: { xs: '30px', sm: '60px', md: '35px', xl: '50px' },
                     color: 'primary.main',
                     marginLeft: '15px',
                   }}
@@ -138,18 +165,27 @@ const HomeServices = () => {
               <Typography variant='p' sx={{ color: '#5B5C50' }}>
                 {description}
               </Typography>
-              <Typography variant='p' sx={{ color: '#5B5C50', display: {xs: 'none', md: 'none', lg: 'none', xl: 'inline'} }}>
-                {description}
-              </Typography>
               <Typography
                 variant='p'
-                sx={{ color: '#5B5C50', display: {xs: 'none', sm: 'none', md: 'none', lg: 'inline'} }}
+                sx={{
+                  color: '#5B5C50',
+                  display: { xs: 'none', md: 'none', lg: 'none', xl: 'inline' },
+                }}
               >
                 {description}
               </Typography>
               <Typography
                 variant='p'
-                sx={{ color: '#5B5C50', marginBottom: 'auto', }}
+                sx={{
+                  color: '#5B5C50',
+                  display: { xs: 'none', sm: 'none', md: 'none', lg: 'inline' },
+                }}
+              >
+                {description}
+              </Typography>
+              <Typography
+                variant='p'
+                sx={{ color: '#5B5C50', marginBottom: 'auto' }}
               >
                 {description}
               </Typography>

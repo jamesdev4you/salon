@@ -2,7 +2,7 @@ import {defineField, defineType} from 'sanity'
 
 const ourStylists = defineType({
   name: 'ourStylists',
-  type: 'object',
+  type: 'document',
   title: 'Our Stylists',
   fields: [
     defineField({

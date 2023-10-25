@@ -8,15 +8,40 @@ import { useNavigate } from 'react-router-dom';
 import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import '../../index.css';
+import client from '../../sanityClient';
+import imageUrlBuilder from '@sanity/image-url';
+
+const query = '*[_type == "ourStylists"]';
+
+const builder = imageUrlBuilder(client);
+
+function urlFor(source) {
+  return builder.image(source);
+}
 
 const HomeStylists = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
+  const [stylistOptions, setStylistOptions] = useState([]);
 
   useEffect(() => {
     if (inView) {
       controls.start('visible');
     }
+
+    client
+      .fetch(query)
+      .then((queryResponse) => {
+        console.log('Response', queryResponse);
+        const updatedStylistOptions = queryResponse.map((item) => {
+          return {
+            backgroundImg: item?.Stylist?.image?.asset?._ref,
+            name: item?.Stylist?.Name,
+          };
+        });
+        setStylistOptions(updatedStylistOptions);
+      })
+      .catch(console.error);
   }, [controls, inView]);
 
   const navigate = useNavigate();
@@ -26,33 +51,37 @@ const HomeStylists = () => {
   const [hoveredThree, setHoveredThree] = useState(false);
   const [hoveredFour, setHoveredFour] = useState(false);
 
+  if (stylistOptions.length === 0) {
+    return null;
+  }
+
   const photosStylists = [
     {
-      picture: Woman,
+      picture: stylistOptions[0]?.backgroundImg,
       hovered: hoveredOne,
       setHovered: setHoveredOne,
-      title: 'James Boyle',
+      title: stylistOptions[0]?.name,
       targetId: 'womanOne',
     },
     {
-      picture: WomanTwo,
+      picture: stylistOptions[1]?.backgroundImg,
       hovered: hoveredTwo,
       setHovered: setHoveredTwo,
-      title: 'James Boyle',
+      title: stylistOptions[1]?.name,
       targetId: 'womanTwo',
     },
     {
-      picture: WomanThree,
+      picture: stylistOptions[2]?.backgroundImg,
       hovered: hoveredThree,
       setHovered: setHoveredThree,
-      title: 'James Boyle',
+      title: stylistOptions[2]?.name,
       targetId: 'womanThree',
     },
     {
-      picture: WomanFour,
+      picture: stylistOptions[3]?.backgroundImg,
       hovered: hoveredFour,
       setHovered: setHoveredFour,
-      title: 'James Boyle',
+      title: stylistOptions[3]?.name,
       targetId: 'womanFour',
     },
   ];
@@ -143,8 +172,12 @@ const HomeStylists = () => {
                   },
                   height: '60vh',
                   backgroundImage: hovered
-                    ? `linear-gradient(rgba(0, 0, 0, .6),rgba(0, 0, 0, .55)) , url(${picture})`
-                    : `linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)) , url(${picture})`,
+                    ? `linear-gradient(rgba(0, 0, 0, .6),rgba(0, 0, 0, .55)) , url(${urlFor(
+                        picture
+                      )})`
+                    : `linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)) , url(${urlFor(
+                        picture
+                      )})`,
                   backgroundSize: 'cover',
                   backgroundRepeat: 'none',
                   backgroundPosition: 'bottom',
