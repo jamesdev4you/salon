@@ -1,6 +1,6 @@
 import {defineArrayMember, defineField, defineType} from 'sanity'
 
-const pageType = defineType({
+const Home = defineType({
   name: 'Home',
   type: 'document',
   title: 'Home Page',
@@ -32,4 +32,4 @@ const pageType = defineType({
   ],
 })
 
-export default pageType
+export default Home

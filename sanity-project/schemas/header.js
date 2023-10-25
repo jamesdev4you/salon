@@ -2,9 +2,13 @@ import {defineField, defineType} from 'sanity'
 
 const header = defineType({
   name: 'header',
-  type: 'object',
+  type: 'document',
   title: 'Header',
   fields: [
+    defineField({
+      name: 'title',
+      type: 'string',
+    }),
     defineField({
       name: 'heading',
       type: 'string',
