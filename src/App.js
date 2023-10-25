@@ -49,19 +49,19 @@ function App() {
     <ThemeProvider theme={theme}>
       <Routes>
         <Route path='/' element={<NavBar />} color='secondary'>
-          <Route path='/' element={<Home headerOp={headerOptions[0]} />} />
+          <Route path='/' element={<Home headerOp={headerOptions[1]} />} />
           <Route
             path='/appointment'
-            element={<Appointment headerOp={headerOptions[1]} />}
+            element={<Appointment headerOp={headerOptions[2]} />}
           />
           <Route
             path='/reviews'
-            element={<Reviews headerOp={headerOptions[2]} />}
+            element={<Reviews headerOp={headerOptions[4]} />}
           />
           <Route path='/team' element={<Team headerOp={headerOptions[3]} />} />
           <Route
             path='/gallery'
-            element={<Gallery headerOp={headerOptions[4]} />}
+            element={<Gallery headerOp={headerOptions[0]} />}
           />
           <Route path='*' element={<Home />} />
         </Route>
