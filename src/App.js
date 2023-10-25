@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import Home from './PageComponents/Home/home.js';
 import Gallery from './PageComponents/Gallery/gallery.js';
 import Appointment from '../src/PageComponents/Appointment/appointment.js';
@@ -7,23 +8,9 @@ import NavBar from './PageComponents/NavBar/navbar.js';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Routes, Route } from 'react-router-dom';
 import { MyServiceButton } from '../src/PageComponents/styledComponents.js';
-import homeImage from '../src/PageComponents/assets/headerhome.jpg';
-import contactImage from '../src/PageComponents/assets/headercontact.jpg';
-import headerReviews from '../src/PageComponents/assets/headerReviews.jpg';
-import headerTeam from '../src/PageComponents/assets/headerTeam.jpg';
-import headerGallery from '../src/PageComponents/assets/headerGallery.jpg';
-import { createClient } from '@sanity/client';
+import client from './sanityClient';
 
-const client = createClient({
-  projectId: '5a2uwhtx',
-  dataset: 'production',
-  useCdn: true,
-});
-
-client
-  .fetch(`count(*)`)
-  .then((data) => console.log(`Number of documents: ${data}`))
-  .catch(console.error);
+const query = '*[_type == "header"]';
 
 const theme = createTheme({
   palette: {
@@ -37,38 +24,26 @@ const theme = createTheme({
 });
 
 function App() {
-  const headerOptions = [
-    {
-      title: 'Shear Bliss',
-      desc: 'of Tampa Bay',
-      button: MyServiceButton,
-      backgroundImg: homeImage,
-    },
-    {
-      title: 'Book Now',
-      desc: '& Begin Beauty',
-      button: MyServiceButton,
-      backgroundImg: contactImage,
-    },
-    {
-      title: 'Testimonials',
-      desc: 'by Amazing Clients',
-      button: MyServiceButton,
-      backgroundImg: headerReviews,
-    },
-    {
-      title: 'Shear Bliss',
-      desc: 'Fantastic Team!',
-      button: MyServiceButton,
-      backgroundImg: headerTeam,
-    },
-    {
-      title: "Bliss Pic's",
-      desc: 'Gallery of our Work',
-      button: MyServiceButton,
-      backgroundImg: headerGallery,
-    },
-  ];
+  const [headerOptions, setHeaderOptions] = useState([]);
+
+  useEffect(() => {
+    client
+      .fetch(query)
+      .then((queryResponse) => {
+        console.log('Query Response:', queryResponse);
+        const updatedHeaderOptions = queryResponse.map((item) => {
+          return {
+            background: item.backgroundImage.asset._ref,
+            title: item.heading,
+            desc: item.tagline,
+            button: MyServiceButton,
+          };
+        });
+        console.log('yo', headerOptions);
+        setHeaderOptions(updatedHeaderOptions);
+      })
+      .catch(console.error);
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>

@@ -4,14 +4,12 @@ import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
-import SvgIcon from '@mui/material/SvgIcon';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import { NavLink } from 'react-router-dom';
 import ListItem from '@mui/material/ListItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Button from '@mui/material/Button';
 import Logo from '../assets/Logo.png';
 import '../../navlink.css';
 import '../../index.css';
@@ -102,6 +100,7 @@ export default function NavBar(props) {
           >
             {navItems.map((item) => (
               <NavLink
+                key={item.href}
                 className='menu_link'
                 style={{
                   fontFamily: 'Birds',
