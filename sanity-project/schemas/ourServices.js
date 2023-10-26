@@ -2,8 +2,8 @@ import {defineField, defineType} from 'sanity'
 
 const ourServices = defineType({
   name: 'ourServices',
-  type: 'object',
-  title: 'Our Services',
+  type: 'document',
+  title: 'Our Services- Home Page',
   fields: [
     defineField({
       name: 'Facials',

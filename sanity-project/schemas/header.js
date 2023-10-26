@@ -3,7 +3,7 @@ import {defineField, defineType} from 'sanity'
 const header = defineType({
   name: 'header',
   type: 'document',
-  title: 'Header',
+  title: 'Header - All Pages',
   fields: [
     defineField({
       name: 'title',

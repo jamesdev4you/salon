@@ -2,8 +2,8 @@ import {defineField, defineType} from 'sanity'
 
 const ourMenu = defineType({
   name: 'ourMenu',
-  type: 'object',
-  title: 'Our Menu',
+  type: 'document',
+  title: 'Our Menu - Home Page',
   fields: [
     defineField({
       name: 'Hair',
