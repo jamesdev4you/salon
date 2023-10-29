@@ -1,44 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import { MyServiceButton } from '../styledComponents.js';
 import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import client from '../../sanityClient';
 
-const menuItems = [
-  {
-    id: 1,
-    title: 'Hair',
-    price: '$35',
-    itemOne: 'Coloring',
-    itemTwo: 'Highlights',
-    itemThree: 'Full',
-    itemFour: 'Add Color',
-    itemFive: 'Men Haircut',
-    itemSix: 'Child Haircut',
-  },
-  {
-    id: 2,
-    title: 'Facial',
-    price: '$35',
-    itemOne: 'Express',
-    itemTwo: 'Luxury',
-    itemThree: 'Bliss Signature',
-    itemFour: 'Teen',
-    itemFive: 'Back',
-    itemSix: 'Bum Bum',
-  },
-  {
-    id: 3,
-    title: 'Mani-Pedi',
-    price: '$35',
-    itemOne: 'Manicure',
-    itemTwo: 'Pedicure',
-    itemThree: 'Shellac-Mani',
-    itemFour: 'Nails',
-    itemFive: 'Nail Polish',
-    itemSix: 'Nail',
-  },
-];
+const query = '*[_type == "ourMenu"]';
+
+
 
 const squareVariants = {
   visible: { opacity: 1, transition: { duration: 1.5 } },
@@ -63,16 +32,97 @@ var myAtoi = function (menuItems) {
 };
 
 const HomeMenu = () => {
+  const [menuOptions, setMenuOptions] = useState([]);
   const controls = useAnimation();
   const [ref, inView] = useInView();
 
+  const menuItems = [
+    {
+      id: 1,
+      title: 'Hair',
+      priceOne: menuOptions[0].hair.ItemOnePrice,
+      itemOne: menuOptions[0].hair.ItemOne,
+      priceTwo: menuOptions[0].hair.ItemTwoPrice,
+      itemTwo: menuOptions[0].hair.ItemTwo,
+      priceThree: menuOptions[0].hair.ItemThreePrice,
+      itemThree: menuOptions[0].hair.ItemThree,
+      itemFour: menuOptions[0].hair.ItemFour,
+      priceFour: menuOptions[0].hair.ItemFourPrice,
+      itemFive: menuOptions[0].hair.ItemFive,
+      priceFive: menuOptions[0].hair.ItemFivePrice,
+      itemSix: menuOptions[0].hair.ItemSix,
+      priceSix: menuOptions[0].hair.ItemSixPrice,
+    },
+    {
+      id: 2,
+      title: 'Mani-Pedi',
+      priceOne: menuOptions[0].manipedi.ItemOnePrice,
+      itemOne: menuOptions[0].manipedi.ItemOne,
+      priceTwo: menuOptions[0].manipedi.ItemTwoPrice,
+      itemTwo: menuOptions[0].manipedi.ItemTwo,
+      priceThree: menuOptions[0].manipedi.ItemThreePrice,
+      itemThree: menuOptions[0].manipedi.ItemThree,
+      itemFour: menuOptions[0].manipedi.ItemFour,
+      priceFour: menuOptions[0].manipedi.ItemFourPrice,
+      itemFive: menuOptions[0].manipedi.ItemFive,
+      priceFive: menuOptions[0].manipedi.ItemFivePrice,
+      itemSix: menuOptions[0].manipedi.ItemSix,
+      priceSix: menuOptions[0].manipedi.ItemSixPrice,
+    },
+    {
+      id: 3,
+      title: 'Facial',
+      priceOne: menuOptions[0].facial.ItemOnePrice,
+      itemOne: menuOptions[0].facial.ItemOne,
+      priceTwo: menuOptions[0].facial.ItemTwoPrice,
+      itemTwo: menuOptions[0].facial.ItemTwo,
+      priceThree: menuOptions[0].facial.ItemThreePrice,
+      itemThree: menuOptions[0].facial.ItemThree,
+      itemFour: menuOptions[0].facial.ItemFour,
+      priceFour: menuOptions[0].facial.ItemFourPrice,
+      itemFive: menuOptions[0].facial.ItemFive,
+      priceFive: menuOptions[0].facial.ItemFivePrice,
+      itemSix: menuOptions[0].facial.ItemSix,
+      priceSix: menuOptions[0].facial.ItemSixPrice,
+    },
+  ];
+
+
   useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    }
+    const fetchData = async () => {
+      try {
+        if (inView) {
+          controls.start('visible');
+        }
+
+        const queryResponse = await client.fetch(query);
+
+
+        const updatedMenuOptions = queryResponse.map((item) => {
+          return{
+            facial: item.Facial,
+            manipedi: item.ManiPedi,
+            hair: item.Hair,
+          };
+        });
+
+        setMenuOptions(updatedMenuOptions);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
   }, [controls, inView]);
 
+  // If menuOptions is empty, show a loading state or return null
+  if (menuOptions.length === 0) {
+    return null; // Replace LoadingComponent with your loading indicator
+  }
+
+  // Access menuOptions properties safely after data has been fetched
   const modifiedMenuItems = myAtoi(menuItems);
+
 
   return (
     <Box
@@ -113,13 +163,18 @@ const HomeMenu = () => {
           ({
             id,
             title,
-            price,
+            priceOne,
             itemOne,
             itemTwo,
+            priceTwo,
             itemThree,
+            priceThree,
             itemFour,
+            priceFour,
             itemFive,
+            priceFive,
             itemSix,
+            priceSix,
           }) => (
             <Box
               key={id}
@@ -203,7 +258,7 @@ const HomeMenu = () => {
                   }}
                 >
                   {itemOne}
-                  {price}
+                  {priceOne}
                 </Typography>
                 <Typography
                   sx={{
@@ -225,7 +280,7 @@ const HomeMenu = () => {
                   }}
                 >
                   {itemTwo}
-                  {price}
+                  {priceTwo}
                 </Typography>
                 <Typography
                   sx={{
@@ -247,7 +302,7 @@ const HomeMenu = () => {
                   }}
                 >
                   {itemThree}
-                  {price}
+                  {priceThree}
                 </Typography>
                 <Typography
                   sx={{
@@ -269,7 +324,7 @@ const HomeMenu = () => {
                   }}
                 >
                   {itemFour}
-                  {price}
+                  {priceFour}
                 </Typography>
                 <Typography
                   sx={{
@@ -291,7 +346,7 @@ const HomeMenu = () => {
                   }}
                 >
                   {itemFive}
-                  {price}
+                  {priceFive}
                 </Typography>
                 <Typography
                   sx={{
@@ -313,7 +368,7 @@ const HomeMenu = () => {
                   }}
                 >
                   {itemSix}
-                  {price}
+                  {priceSix}
                 </Typography>
                 <MyServiceButton />
               </Box>

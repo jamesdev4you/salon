@@ -15,9 +15,19 @@ const ourMenu = defineType({
           title: 'Item One',
         }),
         defineField({
+          name: 'ItemOnePrice',
+          type: 'string',
+          title: 'Item One Price',
+        }),
+        defineField({
           name: 'ItemTwo',
           type: 'string',
           title: 'Item Two',
+        }),
+        defineField({
+          name: 'ItemTwoPrice',
+          type: 'string',
+          title: 'Item Two Price',
         }),
         defineField({
           name: 'ItemThree',
@@ -25,9 +35,19 @@ const ourMenu = defineType({
           title: 'Item Three',
         }),
         defineField({
+          name: 'ItemThreePrice',
+          type: 'string',
+          title: 'Item Three Price',
+        }),
+        defineField({
           name: 'ItemFour',
           type: 'string',
           title: 'Item Four',
+        }),
+        defineField({
+          name: 'ItemFourPrice',
+          type: 'string',
+          title: 'Item Four Price',
         }),
         defineField({
           name: 'ItemFive',
@@ -35,9 +55,19 @@ const ourMenu = defineType({
           title: 'Item Five',
         }),
         defineField({
+          name: 'ItemFivePrice',
+          type: 'string',
+          title: 'Item Five Price',
+        }),
+        defineField({
           name: 'ItemSix',
           type: 'string',
           title: 'Item Six',
+        }),
+        defineField({
+          name: 'ItemSixPrice',
+          type: 'string',
+          title: 'Item Six Price',
         }),
       ],
     }),
@@ -51,9 +81,19 @@ const ourMenu = defineType({
           title: 'Item One',
         }),
         defineField({
+          name: 'ItemOnePrice',
+          type: 'string',
+          title: 'Item One Price',
+        }),
+        defineField({
           name: 'ItemTwo',
           type: 'string',
           title: 'Item Two',
+        }),
+        defineField({
+          name: 'ItemTwoPrice',
+          type: 'string',
+          title: 'Item Two Price',
         }),
         defineField({
           name: 'ItemThree',
@@ -61,9 +101,19 @@ const ourMenu = defineType({
           title: 'Item Three',
         }),
         defineField({
+          name: 'ItemThreePrice',
+          type: 'string',
+          title: 'Item Three Price',
+        }),
+        defineField({
           name: 'ItemFour',
           type: 'string',
           title: 'Item Four',
+        }),
+        defineField({
+          name: 'ItemFourPrice',
+          type: 'string',
+          title: 'Item Four Price',
         }),
         defineField({
           name: 'ItemFive',
@@ -71,9 +121,19 @@ const ourMenu = defineType({
           title: 'Item Five',
         }),
         defineField({
+          name: 'ItemFivePrice',
+          type: 'string',
+          title: 'Item Five Price',
+        }),
+        defineField({
           name: 'ItemSix',
           type: 'string',
           title: 'Item Six',
+        }),
+        defineField({
+          name: 'ItemSixPrice',
+          type: 'string',
+          title: 'Item Six Price',
         }),
       ],
     }),
@@ -87,9 +147,19 @@ const ourMenu = defineType({
           title: 'Item One',
         }),
         defineField({
+          name: 'ItemOnePrice',
+          type: 'string',
+          title: 'Item One Price',
+        }),
+        defineField({
           name: 'ItemTwo',
           type: 'string',
           title: 'Item Two',
+        }),
+        defineField({
+          name: 'ItemTwoPrice',
+          type: 'string',
+          title: 'Item Two Price',
         }),
         defineField({
           name: 'ItemThree',
@@ -97,9 +167,19 @@ const ourMenu = defineType({
           title: 'Item Three',
         }),
         defineField({
+          name: 'ItemThreePrice',
+          type: 'string',
+          title: 'Item Three Price',
+        }),
+        defineField({
           name: 'ItemFour',
           type: 'string',
           title: 'Item Four',
+        }),
+        defineField({
+          name: 'ItemFourPrice',
+          type: 'string',
+          title: 'Item Four Price',
         }),
         defineField({
           name: 'ItemFive',
@@ -107,9 +187,19 @@ const ourMenu = defineType({
           title: 'Item Five',
         }),
         defineField({
+          name: 'ItemFivePrice',
+          type: 'string',
+          title: 'Item Five Price',
+        }),
+        defineField({
           name: 'ItemSix',
           type: 'string',
           title: 'Item Six',
+        }),
+        defineField({
+          name: 'ItemSixPrice',
+          type: 'string',
+          title: 'Item Six Price',
         }),
       ],
     }),
