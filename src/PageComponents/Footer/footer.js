@@ -1,10 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Typography, Box } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import '../../index.css';
 import '../../navlink.css';
+import client from '../../sanityClient';
 
-const footer = () => {
+const query = '*[_type == "info"]';
+
+const Footer = () => {
+  const [testimonialOptions, setTestimonialOptions] = useState([]);
+  const [loading, setLoading] = useState(true); // Add loading state
+
+  useEffect(() => {
+    client
+      .fetch(query)
+      .then((queryResponse) => {
+        console.log('hiii', queryResponse);
+        const updatedTestimonialOptions = queryResponse.map((item) => {
+          return {
+            phone: item?.phone,
+            email: item?.email,
+            address: item?.address,
+            Monday: item?.hours?.Monday,
+            Tuesday: item?.hours?.Tuesday,
+            Wednesday: item?.hours?.Wednesday,
+            Thursday: item?.hours?.Thursday,
+            Friday: item?.hours?.Friday,
+            Saturday: item?.hours?.Saturday,
+            Sunday: item?.hours?.Sunday,
+          };
+        });
+        setTestimonialOptions(updatedTestimonialOptions);
+        setLoading(false); // Set loading to false when data is fetched
+      })
+      .catch(console.error);
+  }, []); // Empty dependency array ensures useEffect runs once after initial render
+
+  // Render loading message while data is being fetched
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <Box sx={{ width: '100%', height: '100%', backgroundColor: '#E4DCC0' }}>
       <Box
@@ -158,12 +194,12 @@ const footer = () => {
               href='tel:7274879698'
               style={{ color: 'black', textDecoration: 'none' }}
             >
-              #727-487-9698
+              {testimonialOptions[0].phone}
             </a>
           </Typography>
           <Typography sx={{ fontFamily: 'Ubuntu', color: 'black' }}>
             {' '}
-            brazilianfitnessus@email.com{' '}
+            {testimonialOptions[0].email}
           </Typography>
         </Box>
         <Box
@@ -195,33 +231,36 @@ const footer = () => {
           </Typography>
           <Typography sx={{ fontFamily: 'Ubuntu' }}>
             {' '}
-            Mon: 6:00am - 7:00pm{' '}
+            {testimonialOptions[0]?.Monday || 'N/A'}
           </Typography>
           <Typography sx={{ fontFamily: 'Ubuntu' }}>
             {' '}
-            Tue: 12:00pm-7:00pm{' '}
+            {testimonialOptions[0]?.Tuesday || 'N/A'}
           </Typography>
           <Typography sx={{ fontFamily: 'Ubuntu' }}>
             {' '}
-            Wed: 6:00am-7:00pm{' '}
+            {testimonialOptions[0]?.Wednesday || 'N/A'}
           </Typography>
           <Typography sx={{ fontFamily: 'Ubuntu' }}>
             {' '}
-            Thu: 12:00pm-7:00pm{' '}
+            {testimonialOptions[0]?.Thursday || 'N/A'}
           </Typography>
           <Typography sx={{ fontFamily: 'Ubuntu' }}>
             {' '}
-            Fri: 6:00am-7:00pm{' '}
+            {testimonialOptions[0]?.Friday || 'N/A'}
           </Typography>
           <Typography sx={{ fontFamily: 'Ubuntu' }}>
             {' '}
-            Sat: 8:00am-6:00pm{' '}
+            {testimonialOptions[0]?.Saturday || 'N/A'}
           </Typography>
-          <Typography sx={{ fontFamily: 'Ubuntu' }}> Sun: CLOSED </Typography>
+          <Typography sx={{ fontFamily: 'Ubuntu' }}>
+            {' '}
+            {testimonialOptions[0]?.Sunday || 'N/A'}
+          </Typography>
         </Box>
       </Box>
     </Box>
   );
 };
 
-export default footer;
+export default Footer;

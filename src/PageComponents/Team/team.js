@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import HomeHeader from '../Home/homeHeader.js';
 import NavBar from '../NavBar/navbar.js';
 import { Typography, Box } from '@mui/material';
@@ -9,56 +9,96 @@ import Woman4 from '../assets/woman4.jpg';
 import { MyTeamButton, MyTeamButtonDark } from '../styledComponents.js';
 import '../../index.css';
 import Footer from '../Footer/footer.js';
-import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import client from '../../sanityClient';
+import imageUrlBuilder from '@sanity/image-url';
+
+const query = '*[_type == "ourStylists"]';
+
+const builder = imageUrlBuilder(client);
+
+function urlFor(source) {
+  return builder.image(source);
+}
 
 const Team = (props) => {
   const { state } = useLocation();
   const { targetId } = state || {};
+  const [stylistOptions, setStylistOptions] = useState([]);
 
   useEffect(() => {
     const el = document.getElementById(targetId);
     if (el) {
       el.scrollIntoView();
     }
+
+    client
+      .fetch(query)
+      .then((queryResponse) => {
+        console.log('Response', queryResponse);
+        const updatedStylistOptions = queryResponse.map((item) => {
+          return {
+            backgroundImg: item?.Stylist?.image?.asset?._ref,
+            name: item?.Stylist?.Name,
+            title: item?.Stylist?.Title,
+            descriptionOne: item?.Stylist?.descriptionOne,
+            descriptionTwo: item?.Stylist?.descriptionTwo,
+            descriptionThree: item?.Stylist?.descriptionThree,
+          };
+        });
+        setStylistOptions(updatedStylistOptions);
+      })
+      .catch(console.error);
   }, [targetId]);
+
+  if (stylistOptions.length === 0) {
+    return null;
+  }
 
   const teamSections = [
     {
-      picture: Woman,
-      title: 'James Boyle',
-      job: 'Founder / Beauty Analyst',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed nibh sed sapien fermentum vulputate at vitae sapien. Donec consequat ultricies risus nec faucibus. Integer facilisis erat et dui dapibus, a ullamcorper elit mollis. Aenean in luctus lorem.',
+      picture: stylistOptions[0]?.backgroundImg,
+      title: stylistOptions[0]?.name,
+      job: stylistOptions[0]?.title,
+      desc1: stylistOptions[0]?.descriptionOne,
+      desc2: stylistOptions[0]?.descriptionTwo,
+      desc3: stylistOptions[0]?.descriptionThree,
       primaryColor: '#1B1E1E',
       backgroundColor: '#E4DCC0',
       dabutton: <MyTeamButtonDark />,
       section: 'womanOne',
     },
     {
-      picture: Woman2,
-      title: 'James Boyle',
-      job: 'Founder / Beauty Analyst',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed nibh sed sapien fermentum vulputate at vitae sapien. Donec consequat ultricies risus nec faucibus. Integer facilisis erat et dui dapibus, a ullamcorper elit mollis. Aenean in luctus lorem.',
+      picture: stylistOptions[1]?.backgroundImg,
+      title: stylistOptions[1]?.name,
+      job: stylistOptions[1]?.title,
+      desc1: stylistOptions[1]?.descriptionOne,
+      desc2: stylistOptions[1]?.descriptionTwo,
+      desc3: stylistOptions[1]?.descriptionThree,
       primaryColor: '#E4DCC0',
       backgroundColor: '#1B1E1E',
       dabutton: <MyTeamButton />,
       section: 'womanTwo',
     },
     {
-      picture: Woman3,
-      title: 'James Boyle',
-      job: 'Founder / Beauty Analyst',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed nibh sed sapien fermentum vulputate at vitae sapien. Donec consequat ultricies risus nec faucibus. Integer facilisis erat et dui dapibus, a ullamcorper elit mollis. Aenean in luctus lorem.',
+      picture: stylistOptions[2]?.backgroundImg,
+      title: stylistOptions[2]?.name,
+      job: stylistOptions[2]?.title,
+      desc1: stylistOptions[2]?.descriptionOne,
+      desc2: stylistOptions[2]?.descriptionTwo,
+      desc3: stylistOptions[2]?.descriptionThree,
       primaryColor: '#1B1E1E',
       backgroundColor: '#E4DCC0',
       dabutton: <MyTeamButtonDark />,
       section: 'womanThree',
     },
     {
-      picture: Woman4,
-      title: 'James Boyle',
-      job: 'Founder / Beauty Analyst',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed nibh sed sapien fermentum vulputate at vitae sapien. Donec consequat ultricies risus nec faucibus. Integer facilisis erat et dui dapibus, a ullamcorper elit mollis. Aenean in luctus lorem.',
+      picture: stylistOptions[3]?.backgroundImg,
+      title: stylistOptions[3]?.name,
+      job: stylistOptions[3]?.title,
+      desc1: stylistOptions[3]?.descriptionOne,
+      desc2: stylistOptions[3]?.descriptionTwo,
+      desc3: stylistOptions[3]?.descriptionThree,
       primaryColor: '#E4DCC0',
       backgroundColor: '#1B1E1E',
       dabutton: <MyTeamButton />,
@@ -87,7 +127,9 @@ const Team = (props) => {
             picture,
             title,
             job,
-            desc,
+            desc1,
+            desc2,
+            desc3,
             primaryColor,
             backgroundColor,
             dabutton,
@@ -127,7 +169,7 @@ const Team = (props) => {
                   borderStyle: 'solid',
                   borderColor: primaryColor,
                   borderRadius: '15px',
-                  background: `url(${picture})`,
+                  background: `url(${urlFor(picture)})`,
                   backgroundSize: 'cover',
                   backgroundRepeat: 'none',
                   backgroundPosition: 'center',
@@ -246,19 +288,19 @@ const Team = (props) => {
                   variant='p'
                   sx={{ color: primaryColor, width: '90%' }}
                 >
-                  {desc}
+                  {desc1}
                 </Typography>
                 <Typography
                   variant='p'
                   sx={{ color: primaryColor, width: '90%' }}
                 >
-                  {desc}
+                  {desc2}
                 </Typography>
                 <Typography
                   variant='p'
                   sx={{ color: primaryColor, width: '90%' }}
                 >
-                  {desc}
+                  {desc3}
                 </Typography>
                 {dabutton}
               </Box>

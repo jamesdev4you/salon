@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Typography, Box, Link } from '@mui/material';
 import HomeHeader from '../Home/homeHeader.js';
 import NavBar from '../NavBar/navbar.js';
@@ -10,44 +10,68 @@ import Woman5 from '../assets/woman5.jpg';
 import '../../index.css';
 import Footer from '../Footer/footer.js';
 import SingleReview from './singleReview.js';
+import client from '../../sanityClient';
 
-const reviews = (props) => {
+const query = '*[_type == "testimonials"]';
+
+const Reviews = (props) => {
+  const [reviewOptions, setReviewOptions] = useState([]);
+  const [loading, setLoading] = useState(true); // Add loading state
+
+  useEffect(() => {
+    client
+      .fetch(query)
+      .then((queryResponse) => {
+        const updatedReviewOptions = queryResponse.map((item) => {
+          return {
+            backgroundImg: item?.Testimonial?.image?.asset?._ref || '',
+            name: item?.Testimonial?.Name || 'N/A',
+            description: item?.Testimonial?.Quote || 'N/A',
+          };
+        });
+
+        setReviewOptions(updatedReviewOptions);
+        setLoading(false);
+      })
+      .catch(console.error);
+  });
+
+  console.log('REVIEWS', reviewOptions);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   const testimonials = [
     {
-      picture: Woman,
-      name: '- James Boyle',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla sem, posuere sodales molestie dictum, gravida id nisl. In hac habitasse platea dictumst. In rutrum est vel libero mattis.',
+      picture: reviewOptions[0]?.backgroundImg,
+      name: reviewOptions[0]?.name,
+      description: reviewOptions[0]?.description,
     },
     {
-      picture: Woman2,
-      name: '- James Boyle',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla sem, posuere sodales molestie dictum, gravida id nisl. In hac habitasse platea dictumst. In rutrum est vel libero mattis.',
+      picture: reviewOptions[1]?.backgroundImg,
+      name: reviewOptions[1]?.name,
+      description: reviewOptions[1]?.description,
     },
     {
-      picture: Woman3,
-      name: '- James Boyle',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla sem, posuere sodales molestie dictum, gravida id nisl. In hac habitasse platea dictumst. In rutrum est vel libero mattis.',
+      picture: reviewOptions[2]?.backgroundImg,
+      name: reviewOptions[2]?.name,
+      description: reviewOptions[2]?.description,
     },
     {
-      picture: Woman4,
-      name: '- James Boyle',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla sem, posuere sodales molestie dictum, gravida id nisl. In hac habitasse platea dictumst. In rutrum est vel libero mattis.',
+      picture: reviewOptions[3]?.backgroundImg,
+      name: reviewOptions[3]?.name,
+      description: reviewOptions[3]?.description,
     },
     {
-      picture: Woman5,
-      name: '- James Boyle',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla sem, posuere sodales molestie dictum, gravida id nisl. In hac habitasse platea dictumst. In rutrum est vel libero mattis.',
+      picture: reviewOptions[4]?.backgroundImg,
+      name: reviewOptions[4]?.name,
+      description: reviewOptions[4]?.description,
     },
     {
-      picture: Woman,
-      name: '- James Boyle',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla sem, posuere sodales molestie dictum, gravida id nisl. In hac habitasse platea dictumst. In rutrum est vel libero mattis.',
+      picture: reviewOptions[5]?.backgroundImg,
+      name: reviewOptions[5]?.name,
+      description: reviewOptions[5]?.description,
     },
   ];
 
@@ -114,4 +138,4 @@ const reviews = (props) => {
   );
 };
 
-export default reviews;
+export default Reviews;

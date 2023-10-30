@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Typography, Box, Link } from '@mui/material';
 import HomeHeader from '../Home/homeHeader.js';
 import NavBar from '../NavBar/navbar.js';
@@ -12,6 +12,9 @@ import Footer from '../Footer/footer.js';
 import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import '../../index.css';
+import client from '../../sanityClient';
+
+const query = '*[_type == "info"]';
 
 const squareVariants = {
   visible: { opacity: 1, transition: { duration: 1.5 } },
@@ -19,6 +22,8 @@ const squareVariants = {
 };
 
 const Appointment = (props) => {
+  const [contactOptions, setContactOptions] = useState([]);
+  const [loading, setLoading] = useState(true); // Add loading state
   const controls = useAnimation();
   const [ref, inView] = useInView();
 
@@ -26,7 +31,27 @@ const Appointment = (props) => {
     if (inView) {
       controls.start('visible');
     }
+
+    client
+      .fetch(query)
+      .then((queryResponse) => {
+        console.log('hiii', queryResponse);
+        const updatedContactOptions = queryResponse.map((item) => {
+          return {
+            phone: item?.phone,
+            email: item?.email,
+            address: item?.address,
+          };
+        });
+        setContactOptions(updatedContactOptions);
+        setLoading(false); // Set loading to false when data is fetched
+      })
+      .catch(console.error);
   }, [controls, inView]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
@@ -183,7 +208,7 @@ const Appointment = (props) => {
                   paddingTop: '30px',
                 }}
               >
-                9602 W Linebaugh Ave, Westchase, FL 33626
+                {contactOptions[0].address}{' '}
               </Typography>
               <Typography sx={{ fontSize: '20px', color: '#E4DCC0' }}>
                 Get in touch for more info!
@@ -244,7 +269,7 @@ const Appointment = (props) => {
                     href='tel:7274879698'
                     style={{ color: '#E4DCC0', textDecoration: 'none' }}
                   >
-                    #727-487-9698
+                    {contactOptions[0].phone}{' '}
                   </a>
                 </Typography>
               </Box>
@@ -291,7 +316,7 @@ const Appointment = (props) => {
                     paddingTop: '30px',
                   }}
                 >
-                  brazilianfitnessus@email.com
+                  {contactOptions[0].email}{' '}
                 </Typography>
               </Box>
             </Box>

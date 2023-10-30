@@ -3,9 +3,6 @@ import { Box, Typography } from '@mui/material';
 import { MyServiceButton } from '../styledComponents.js';
 import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import client from '../../sanityClient';
-
-const query = '*[_type == "ourMenu"]';
 
 const squareVariants = {
   visible: { opacity: 1, transition: { duration: 1.5 } },

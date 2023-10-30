@@ -4,6 +4,14 @@ import Typography from '@mui/material/Typography';
 import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import '../../index.css';
+import imageUrlBuilder from '@sanity/image-url';
+import client from '../../sanityClient';
+
+const builder = imageUrlBuilder(client);
+
+function urlFor(source) {
+  return builder.image(source);
+}
 
 const squareVariants = {
   visible: { opacity: 1, scale: 1, transition: { duration: 0.7 } },
@@ -19,6 +27,8 @@ const SingleReview = (props) => {
       controls.start('visible');
     }
   }, [controls, inView]);
+
+  console.log('props', props.picture);
 
   return (
     <motion.div animate={controls} variants={squareVariants} initial='hidden'>
@@ -76,7 +86,7 @@ const SingleReview = (props) => {
               xs: '140px',
             },
             borderRadius: '50%',
-            backgroundImage: `url(${props.picture})`,
+            backgroundImage: `url(${urlFor(props.picture)})`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
