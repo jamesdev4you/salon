@@ -7,8 +7,6 @@ import client from '../../sanityClient';
 
 const query = '*[_type == "ourMenu"]';
 
-
-
 const squareVariants = {
   visible: { opacity: 1, transition: { duration: 1.5 } },
   hidden: { opacity: 0 },
@@ -98,10 +96,8 @@ const HomeMenu = (props) => {
     },
   ];
 
-
   // Access menuOptions properties safely after data has been fetched
   const modifiedMenuItems = myAtoi(menuItems);
-
 
   return (
     <Box
@@ -116,7 +112,13 @@ const HomeMenu = (props) => {
         backgroundRepeat: 'none',
         backgroundPosition: 'center',
         background: '#1B1E1E',
-        paddingTop: {xl:'100px', lg: '50px', md: '50px', sm: '50px', xs: '50px'},
+        paddingTop: {
+          xl: '100px',
+          lg: '50px',
+          md: '50px',
+          sm: '50px',
+          xs: '50px',
+        },
         paddingBottom: '7em',
       }}
     >
