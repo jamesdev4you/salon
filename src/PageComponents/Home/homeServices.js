@@ -11,50 +11,64 @@ import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import '../../index.css';
 
-const servicesInformation = [
-  {
-    logo: FacialIcon,
-    logoRight: FacialIconRight,
-    viewBox: '0 0 128 128',
-    viewBoxRight: '0 0 512 512',
-    title: 'Facials',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla sem, posuere sodales molestie dictum, gravida id nisl. In hac habitasse platea dictumst. In rutrum est vel libero mattis.',
-  },
-  {
-    logo: ManicureIcon,
-    logoRight: ManicureIconRight,
-    viewBox: '0 0 512 512',
-    viewBoxRight: '0 0 583.721 583.721',
-    title: 'Mani-Pedi',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla sem, posuere sodales molestie dictum, gravida id nisl. In hac habitasse platea dictumst. In rutrum est vel libero mattis.',
-  },
-  {
-    logo: StylistIcon,
-    logoRight: StylistIconRight,
-    viewBoxRight: '0 0 64 64',
-    viewBox: '0 0 512 512',
-    title: 'Hair Stylist',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla sem, posuere sodales molestie dictum, gravida id nisl. In hac habitasse platea dictumst. In rutrum est vel libero mattis.',
-  },
-];
-
 const squareVariants = {
   visible: { opacity: 1, transition: { duration: 1.5 } },
   hidden: { opacity: 0 },
 };
 
-const HomeServices = () => {
+const HomeServices = (props) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
+  const { servicesOp } = props;
 
   useEffect(() => {
     if (inView) {
       controls.start('visible');
     }
   }, [controls, inView]);
+
+  if (!servicesOp || !servicesOp[0]) {
+    // Handle the loading state or show an error message
+    return <div>Loading...</div>; // Or display an error message
+  }
+
+  console.log('yooo', servicesOp);
+
+  const servicesInformation = [
+    {
+      logo: FacialIcon,
+      logoRight: FacialIconRight,
+      viewBox: '0 0 128 128',
+      viewBoxRight: '0 0 512 512',
+      title: 'Facials',
+      paragraphOne: props.servicesOp[0].facial.paragraphOne,
+      paragraphTwo: props.servicesOp[0].facial.paragraphTwo,
+      paragraphThree: props.servicesOp[0].facial.paragraphThree,
+      paragraphFour: props.servicesOp[0].facial.paragraphFour,
+    },
+    {
+      logo: ManicureIcon,
+      logoRight: ManicureIconRight,
+      viewBox: '0 0 512 512',
+      viewBoxRight: '0 0 583.721 583.721',
+      title: 'Mani-Pedi',
+      paragraphOne: props.servicesOp[0].manipedi.paragraphOne,
+      paragraphTwo: props.servicesOp[0].manipedi.paragraphTwo,
+      paragraphThree: props.servicesOp[0].manipedi.paragraphThree,
+      paragraphFour: props.servicesOp[0].manipedi.paragraphFour,
+    },
+    {
+      logo: StylistIcon,
+      logoRight: StylistIconRight,
+      viewBoxRight: '0 0 64 64',
+      viewBox: '0 0 512 512',
+      title: 'Hair Stylist',
+      paragraphOne: props.servicesOp[0].hair.paragraphOne,
+      paragraphTwo: props.servicesOp[0].hair.paragraphTwo,
+      paragraphThree: props.servicesOp[0].hair.paragraphThree,
+      paragraphFour: props.servicesOp[0].hair.paragraphFour,
+    },
+  ];
 
   return (
     <Box
@@ -91,7 +105,17 @@ const HomeServices = () => {
         ref={ref}
       >
         {servicesInformation.map(
-          ({ logo, logoRight, viewBox, viewBoxRight, title, description }) => (
+          ({
+            logo,
+            logoRight,
+            viewBox,
+            viewBoxRight,
+            title,
+            paragraphOne,
+            paragraphTwo,
+            paragraphThree,
+            paragraphFour,
+          }) => (
             <Box
               key={title}
               sx={{
@@ -163,7 +187,7 @@ const HomeServices = () => {
                 />
               </Typography>
               <Typography variant='p' sx={{ color: '#5B5C50' }}>
-                {description}
+                {paragraphOne}
               </Typography>
               <Typography
                 variant='p'
@@ -172,7 +196,7 @@ const HomeServices = () => {
                   display: { xs: 'none', md: 'none', lg: 'none', xl: 'inline' },
                 }}
               >
-                {description}
+                {paragraphTwo}
               </Typography>
               <Typography
                 variant='p'
@@ -181,13 +205,13 @@ const HomeServices = () => {
                   display: { xs: 'none', sm: 'none', md: 'none', lg: 'inline' },
                 }}
               >
-                {description}
+                {paragraphThree}
               </Typography>
               <Typography
                 variant='p'
                 sx={{ color: '#5B5C50', marginBottom: 'auto' }}
               >
-                {description}
+                {paragraphFour}
               </Typography>
 
               <MyServiceButton />

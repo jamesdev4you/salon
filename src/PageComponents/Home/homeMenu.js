@@ -31,94 +31,73 @@ var myAtoi = function (menuItems) {
   return menuItems;
 };
 
-const HomeMenu = () => {
-  const [menuOptions, setMenuOptions] = useState([]);
+const HomeMenu = (props) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
+  const { menuOp } = props;
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
+  if (!menuOp || !menuOp[0] || !menuOp[0].hair) {
+    // Handle the loading state or show an error message
+    return <div>Loading...</div>; // Or display an error message
+  }
 
   const menuItems = [
     {
       id: 1,
       title: 'Hair',
-      priceOne: menuOptions[0].hair.ItemOnePrice,
-      itemOne: menuOptions[0].hair.ItemOne,
-      priceTwo: menuOptions[0].hair.ItemTwoPrice,
-      itemTwo: menuOptions[0].hair.ItemTwo,
-      priceThree: menuOptions[0].hair.ItemThreePrice,
-      itemThree: menuOptions[0].hair.ItemThree,
-      itemFour: menuOptions[0].hair.ItemFour,
-      priceFour: menuOptions[0].hair.ItemFourPrice,
-      itemFive: menuOptions[0].hair.ItemFive,
-      priceFive: menuOptions[0].hair.ItemFivePrice,
-      itemSix: menuOptions[0].hair.ItemSix,
-      priceSix: menuOptions[0].hair.ItemSixPrice,
+      priceOne: props.menuOp[0].hair.ItemOnePrice,
+      itemOne: props.menuOp[0].hair.ItemOne,
+      priceTwo: props.menuOp[0].hair.ItemTwoPrice,
+      itemTwo: props.menuOp[0].hair.ItemTwo,
+      priceThree: props.menuOp[0].hair.ItemThreePrice,
+      itemThree: props.menuOp[0].hair.ItemThree,
+      itemFour: props.menuOp[0].hair.ItemFour,
+      priceFour: props.menuOp[0].hair.ItemFourPrice,
+      itemFive: props.menuOp[0].hair.ItemFive,
+      priceFive: props.menuOp[0].hair.ItemFivePrice,
+      itemSix: props.menuOp[0].hair.ItemSix,
+      priceSix: props.menuOp[0].hair.ItemSixPrice,
     },
     {
       id: 2,
       title: 'Mani-Pedi',
-      priceOne: menuOptions[0].manipedi.ItemOnePrice,
-      itemOne: menuOptions[0].manipedi.ItemOne,
-      priceTwo: menuOptions[0].manipedi.ItemTwoPrice,
-      itemTwo: menuOptions[0].manipedi.ItemTwo,
-      priceThree: menuOptions[0].manipedi.ItemThreePrice,
-      itemThree: menuOptions[0].manipedi.ItemThree,
-      itemFour: menuOptions[0].manipedi.ItemFour,
-      priceFour: menuOptions[0].manipedi.ItemFourPrice,
-      itemFive: menuOptions[0].manipedi.ItemFive,
-      priceFive: menuOptions[0].manipedi.ItemFivePrice,
-      itemSix: menuOptions[0].manipedi.ItemSix,
-      priceSix: menuOptions[0].manipedi.ItemSixPrice,
+      priceOne: props.menuOp[0].manipedi.ItemOnePrice,
+      itemOne: props.menuOp[0].manipedi.ItemOne,
+      priceTwo: props.menuOp[0].manipedi.ItemTwoPrice,
+      itemTwo: props.menuOp[0].manipedi.ItemTwo,
+      priceThree: props.menuOp[0].manipedi.ItemThreePrice,
+      itemThree: props.menuOp[0].manipedi.ItemThree,
+      itemFour: props.menuOp[0].manipedi.ItemFour,
+      priceFour: props.menuOp[0].manipedi.ItemFourPrice,
+      itemFive: props.menuOp[0].manipedi.ItemFive,
+      priceFive: props.menuOp[0].manipedi.ItemFivePrice,
+      itemSix: props.menuOp[0].manipedi.ItemSix,
+      priceSix: props.menuOp[0].manipedi.ItemSixPrice,
     },
     {
       id: 3,
       title: 'Facial',
-      priceOne: menuOptions[0].facial.ItemOnePrice,
-      itemOne: menuOptions[0].facial.ItemOne,
-      priceTwo: menuOptions[0].facial.ItemTwoPrice,
-      itemTwo: menuOptions[0].facial.ItemTwo,
-      priceThree: menuOptions[0].facial.ItemThreePrice,
-      itemThree: menuOptions[0].facial.ItemThree,
-      itemFour: menuOptions[0].facial.ItemFour,
-      priceFour: menuOptions[0].facial.ItemFourPrice,
-      itemFive: menuOptions[0].facial.ItemFive,
-      priceFive: menuOptions[0].facial.ItemFivePrice,
-      itemSix: menuOptions[0].facial.ItemSix,
-      priceSix: menuOptions[0].facial.ItemSixPrice,
+      priceOne: props.menuOp[0].facial.ItemOnePrice,
+      itemOne: props.menuOp[0].facial.ItemOne,
+      priceTwo: props.menuOp[0].facial.ItemTwoPrice,
+      itemTwo: props.menuOp[0].facial.ItemTwo,
+      priceThree: props.menuOp[0].facial.ItemThreePrice,
+      itemThree: props.menuOp[0].facial.ItemThree,
+      itemFour: props.menuOp[0].facial.ItemFour,
+      priceFour: props.menuOp[0].facial.ItemFourPrice,
+      itemFive: props.menuOp[0].facial.ItemFive,
+      priceFive: props.menuOp[0].facial.ItemFivePrice,
+      itemSix: props.menuOp[0].facial.ItemSix,
+      priceSix: props.menuOp[0].facial.ItemSixPrice,
     },
   ];
 
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        if (inView) {
-          controls.start('visible');
-        }
-
-        const queryResponse = await client.fetch(query);
-
-
-        const updatedMenuOptions = queryResponse.map((item) => {
-          return{
-            facial: item.Facial,
-            manipedi: item.ManiPedi,
-            hair: item.Hair,
-          };
-        });
-
-        setMenuOptions(updatedMenuOptions);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchData();
-  }, [controls, inView]);
-
-  // If menuOptions is empty, show a loading state or return null
-  if (menuOptions.length === 0) {
-    return null; // Replace LoadingComponent with your loading indicator
-  }
 
   // Access menuOptions properties safely after data has been fetched
   const modifiedMenuItems = myAtoi(menuItems);
@@ -137,7 +116,7 @@ const HomeMenu = () => {
         backgroundRepeat: 'none',
         backgroundPosition: 'center',
         background: '#1B1E1E',
-        paddingTop: '50px',
+        paddingTop: {xl:'100px', lg: '50px', md: '50px', sm: '50px', xs: '50px'},
         paddingBottom: '7em',
       }}
     >
