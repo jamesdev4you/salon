@@ -1,8 +1,6 @@
 import React from 'react';
 import { Typography, Box } from '@mui/material';
 import '../../index.css';
-import headerTeam from '../../../src/PageComponents/assets/headerTeam.jpg';
-import { MyServiceButton } from '../../../src/PageComponents/styledComponents.js';
 import imageUrlBuilder from '@sanity/image-url';
 import client from '../../sanityClient';
 

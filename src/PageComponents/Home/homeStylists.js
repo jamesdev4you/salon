@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography, Button } from '@mui/material';
-import Woman from '../assets/woman.jpg';
-import WomanTwo from '../assets/woman2.jpg';
-import WomanThree from '../assets/woman3.jpg';
-import WomanFour from '../assets/woman4.jpg';
 import { useNavigate } from 'react-router-dom';
 import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
