@@ -11,11 +11,6 @@ import imageUrlBuilder from '@sanity/image-url';
 
 const query = '*[_type == "ourStylists"]';
 
-const builder = imageUrlBuilder(client);
-
-function urlFor(source) {
-  return builder.image(source);
-}
 
 const Team = (props) => {
   const { state } = useLocation();
@@ -50,6 +45,12 @@ const Team = (props) => {
   if (stylistOptions.length === 0) {
     return null;
   }
+
+  const builder = imageUrlBuilder(client);
+
+function urlFor(source) {
+  return builder.image(source);
+}
 
   const teamSections = [
     {
@@ -101,6 +102,8 @@ const Team = (props) => {
       section: 'womanFour',
     },
   ];
+
+  console.log(teamSections)
 
   return (
     <div>
@@ -165,7 +168,9 @@ const Team = (props) => {
                   borderStyle: 'solid',
                   borderColor: primaryColor,
                   borderRadius: '15px',
-                  background: `url(${urlFor(picture)})`,
+                  background: `url(${urlFor(
+                    picture
+                  )})`,
                   backgroundSize: 'cover',
                   backgroundRepeat: 'none',
                   backgroundPosition: 'center',
@@ -238,7 +243,9 @@ const Team = (props) => {
                     borderWidth: '3px',
                     borderStyle: 'solid',
                     borderRadius: '50%',
-                    background: `url(${picture})`,
+                    background: `url(${urlFor(
+                      picture
+                    )})`,
                     backgroundSize: 'cover',
                     backgroundRepeat: 'none',
                     backgroundPosition: 'center',

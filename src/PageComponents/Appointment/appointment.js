@@ -62,7 +62,7 @@ const Appointment = (props) => {
           width: '100%',
           height: {
             xl: '110vh',
-            lg: '110vh',
+            lg: '120vh',
             md: 'auto',
             sm: 'auto',
             xs: 'auto',
@@ -120,7 +120,7 @@ const Appointment = (props) => {
               xs: '50px',
               sm: '0px',
               md: '0px',
-              lg: '0px',
+              lg: '50px',
               xl: '0px',
             },
           }}
@@ -227,6 +227,7 @@ const Appointment = (props) => {
                   sm: 'column',
                   xs: 'column',
                 },
+                
                 borderBottom: {
                   xl: '1px solid #E4DCC0',
                   lg: '1px solid #E4DCC0',
@@ -234,12 +235,13 @@ const Appointment = (props) => {
                   sm: 'none',
                   xs: 'none',
                 },
+                alignItems: 'space-between'
               }}
             >
               <Box
                 sx={{
                   height: '170px',
-                  width: '100%',
+                  width: '400px',
                   borderBottom: {
                     xl: 'none',
                     lg: 'none',
@@ -251,7 +253,7 @@ const Appointment = (props) => {
               >
                 <Typography
                   sx={{
-                    fontSize: '36px',
+                    fontSize: '26px',
                     color: '#E4DCC0',
                     fontStyle: 'italic',
                   }}
@@ -274,35 +276,21 @@ const Appointment = (props) => {
                 </Typography>
               </Box>
               <Box
-                sx={{
-                  marginLeft: {
-                    xl: '30%',
-                    lg: '10%',
-                    md: '10%',
-                    sm: '0%',
-                    xs: '0%',
-                  },
-                  height: '170px',
-                  width: '100%',
-                  borderBottom: {
-                    xl: 'none',
-                    lg: 'none',
-                    md: 'none',
-                    sm: '1px solid #E4DCC0',
-                    xs: '1px solid #E4DCC0',
-                  },
-                  paddingTop: {
-                    xl: 'none',
-                    lg: 'none',
-                    md: 'none',
-                    sm: '18px',
-                    xs: '18px',
-                  },
-                }}
+sx={{
+  height: '170px',
+  width: '400px',
+  borderBottom: {
+    xl: 'none',
+    lg: 'none',
+    md: 'none',
+    sm: '1px solid #E4DCC0',
+    xs: '1px solid #E4DCC0',
+  },
+}}
               >
                 <Typography
                   sx={{
-                    fontSize: '36px',
+                    fontSize: '26px',
                     color: '#E4DCC0',
                     fontStyle: 'italic',
                   }}

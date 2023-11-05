@@ -103,8 +103,8 @@ const HomeStylists = () => {
         paddingTop: {
           xs: '50px',
           sm: '50px',
-          md: '50px',
-          lg: '150px',
+          md: '70px',
+          lg: '70px',
           xl: '180px',
         },
       }}
@@ -143,7 +143,7 @@ const HomeStylists = () => {
               xs: '50px',
               sm: '50px',
               md: '50px',
-              lg: '150px',
+              lg: '50px',
               xl: '70px',
             },
             gap: { xs: '30px', sm: '30px', md: '30px', xl: '20px' },
@@ -162,11 +162,17 @@ const HomeStylists = () => {
                   width: {
                     xs: '80vw',
                     sm: '50vw',
-                    md: '50vw',
+                    md: '40vw',
                     lg: '20vw',
                     xl: '18vw',
                   },
-                  height: '60vh',
+                  height: {
+                    xs: '60vh',
+                    sm: '60vh',
+                    md: '70vh',
+                    lg: '60vh',
+                    xl: '60vh',
+                  },
                   backgroundImage: hovered
                     ? `linear-gradient(rgba(0, 0, 0, .6),rgba(0, 0, 0, .55)) , url(${urlFor(
                         picture
@@ -184,7 +190,7 @@ const HomeStylists = () => {
                   justifyContent: 'start',
                   padding: hovered ? '.5em' : '0em',
                   marginLeft: '25px',
-                  marginRight: '25px',
+                  
                   alignItems: 'center',
                   border: '3px solid #191C1C',
                   boxShadow:

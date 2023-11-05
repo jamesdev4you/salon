@@ -74,7 +74,7 @@ const HomeServices = (props) => {
     <Box
       sx={{
         width: '100%',
-        height: { sm: 'auto', md: '73vh', lg: '83vh', xl: '83vh' },
+        height: { sm: 'auto', md: '90vh', lg: '100vh', xl: '83vh' },
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -123,7 +123,7 @@ const HomeServices = (props) => {
                   xs: '30em',
                   sm: '30em',
                   md: '32em',
-                  lg: '40em',
+                  lg: '35em',
                   xl: '40em',
                 },
                 width: {
